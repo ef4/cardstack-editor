@@ -14,7 +14,7 @@
   </div>
 
   {{#if tools.active}}
-    {{editor-overlays}}
+    {{editor-overlays tools=tools}}
   {{/if}}
   {{tools-topbar returnToHome=returnToHome tools=tools}}
   {{tools-sidebar active=tools.active returnToHome=returnToHome tools=tools}}

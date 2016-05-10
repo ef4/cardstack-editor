@@ -1,0 +1,9 @@
+{{#if mobiledoc}}
+  {{#if isFastBoot}}
+    <div class='__rendered-mobiledoc'>
+      {{{renderedMobiledoc}}}
+    </div>
+  {{else}}
+    {{render-mobiledoc mobiledoc=mobiledoc cardNames=cardNames}}
+  {{/if}}
+{{/if}}

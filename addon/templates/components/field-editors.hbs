@@ -1,0 +1,26 @@
+  {{#each fields key="id" as |fieldGroup|}}
+    {{#collapsible-section title=(humanize fieldGroup.name)
+                           opened=(eq tools.openedField.id fieldGroup.id)
+                           open=(action tools.openField fieldGroup)
+                           close=(action tools.openField null)
+                           hovered=(perform highlightField fieldGroup)
+                           unhovered=(perform highlightField null) }}
+      {{#each fieldGroup.fields as |field|}}
+        {{#with (field-editor-for fieldGroup.model field) as |editorName|}}
+          {{#if (is-component editorName)}}
+
+          <div class="field">
+            {{#if (and (not-eq editorName 'field-editors/imagecaptions-editor') (gt fieldGroup.fields.length 1)) }}<label>{{humanize field}}</label>{{/if}}
+            {{component editorName model=fieldGroup.model field=field fieldGroupId=fieldGroup.id enabled=tools.editing }}
+          </div>
+
+
+          {{else}}
+            {{assert "No editor for" field editorName}}
+          {{/if}}
+        {{else}}
+          {{assert "No field" field}}
+        {{/with}}
+      {{/each}}
+    {{/collapsible-section}}
+  {{/each}}

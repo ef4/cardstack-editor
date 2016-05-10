@@ -1,0 +1,12 @@
+{{#-priv-mobiledoc-editor mobiledoc=innerMobiledoc
+                          cards=cards
+                          on-change=(perform onChange)
+                          cursor-changed=(action "cursorChanged")
+                          as |editor| }}
+
+
+
+  {{in-sidebar name="paragraph-tools" show=(component "paragraph-options" editor=editor cursor=cursorState)}}
+
+
+{{/-priv-mobiledoc-editor}}

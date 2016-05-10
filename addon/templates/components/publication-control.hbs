@@ -1,0 +1,28 @@
+{{#collapsible-section title=heading.title
+                       opened=opened
+                       open=(action (mut opened) true)
+                       close=(action (mut opened) false)
+                       subtitle=(moment-from-now heading.date allow-empty=true) }}
+
+  <form>
+    <div class="e-published option {{if enabled "active"}} {{if willPublish "selected"}}" onclick={{action (mut willPublish) true}}>
+      {{one-way-input type="radio" checked=willPublish}}<span></span> Published
+      {{#if (and model.published model.changed) }}
+        <p class="pub-date">{{moment-format model.changed "MMMM D, YYYY HH:mm"}}</p>
+      {{/if}}
+    </div>
+    <div class="e-draft option {{if enabled "active"}} {{unless willPublish "selected"}}" onclick={{action (mut willPublish) false}}>
+      {{one-way-input type="radio" checked=(not willPublish)}}<span></span> Draft
+      {{#if (and (not model.published) model.changed) }}
+        <p class="pub-date">{{moment-format model.changed "MMMM D, YYYY HH:mm"}}</p>
+      {{/if}}
+    </div>
+  </form>
+
+  {{#liquid-if enabled}}
+    <footer class="publication-control-footer">
+      <a class="text-button" {{action "delete"}}>Delete</a>
+      <button class="tools-btn right {{if anythingPending "active"}}" {{action "doUpdate"}}>{{buttonTitle}}</button>
+    </footer>
+  {{/liquid-if}}
+{{/collapsible-section}}

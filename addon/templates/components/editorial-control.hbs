@@ -1,0 +1,18 @@
+{{#collapsible-section title="Editorial"
+                       opened=opened
+                       open=(action "open")
+                       close=(action "close") }}
+
+  {{#each editorialFieldNames as |fieldName|}}
+    {{#with (field-editor-for model fieldName) as |editorName|}}
+      {{#if (is-component editorName) }}
+        <label>{{humanize fieldName}}</label>
+        {{component editorName model=model field=fieldName enabled=enabled}}
+      {{else}}
+        {{assert "No editor for" fieldName editorName}}
+      {{/if}}
+    {{/with}}
+  {{/each}}
+
+
+{{/collapsible-section}}

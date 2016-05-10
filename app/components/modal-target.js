@@ -1,0 +1,1 @@
+export { default } from 'cardstack-cms/components/modal-target';

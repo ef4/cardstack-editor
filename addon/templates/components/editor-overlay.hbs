@@ -1,0 +1,19 @@
+<label>{{humanize field.name}}</label>
+<div class="overlay-border">
+  <div class="target" onmouseenter={{action "beginHover"}} onmouseleave={{action "endHover"}} onclick={{action (action open field) }}>
+    {{#if isOpen}}
+      <div class="inline-editor" >
+        <div class="style-imports {{copiedClasses}}">
+          {{component editor}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+{{#liquid-if isOpen containerless=true use="overlay-scrim-fade"}}
+  <div class="overlay-scrim top"    onclick={{action dismiss}}></div>
+  <div class="overlay-scrim bottom" onclick={{action dismiss}}></div>
+  <div class="overlay-scrim left"   onclick={{action dismiss}}></div>
+  <div class="overlay-scrim right"  onclick={{action dismiss}}></div>
+{{/liquid-if}}

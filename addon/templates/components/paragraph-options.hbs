@@ -1,0 +1,80 @@
+{{#if (or cursor.hasSelection weHaveSelection)}}
+  <div class="paragraph-options">
+    {{#if linking}}
+      <span class="block-option active">{{cms-icon "link"}}</span>
+      {{#auto-focus}}
+        {{one-way-input value=linkUrl update=(action "setLinkUrl") placeholder="http://" }}
+      {{/auto-focus}}
+      <div class="checkbox">
+        {{one-way-input type="checkbox" checked=isExternalLink update=(action "setLinkExternal")}}
+        <label>Open in New Window</label>
+      </div>
+    {{else}}
+      {{#mobiledoc-markup-button editor=editor for="strong" }}
+        {{cms-icon "bold"}}
+      {{/mobiledoc-markup-button}}
+
+      {{#mobiledoc-markup-button editor=editor for="em" }}
+        {{cms-icon "italic"}}
+      {{/mobiledoc-markup-button}}
+
+      {{#mobiledoc-markup-button editor=editor for="u" }}
+        {{cms-icon "underline"}}
+      {{/mobiledoc-markup-button}}
+
+      <button active={{editor.activeMarkupTagNames.isA}} onclick={{action "toggleLink"}}>
+        {{cms-icon "link"}}
+      </button>
+    {{/if}}
+  </div>
+{{/if}}
+
+<div class="block-control">
+
+  {{#if currentIcon}}
+  <div class="current-block" {{action "toggleMenu"}}>
+    {{#if (eq 'p' _lastActiveSection.tagName)}}
+      {{cms-icon "p"}}
+    {{else if (eq 'h2' _lastActiveSection.tagName)}}
+      {{cms-icon "h2"}}
+    {{else if (eq 'h3' _lastActiveSection.tagName)}}
+      {{cms-icon "h3"}}
+    {{else if (eq 'ul' _lastActiveSection.tagName)}}
+      {{cms-icon "list"}}
+    {{else if (eq 'blockquote' _lastActiveSection.tagName)}}
+      {{cms-icon "quote"}}
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{#if blockMenu}}
+  <div class="block-options">
+    <button {{action "toggleSection" "p"}}>
+      {{cms-icon "p"}}
+    </button>
+    <button {{action "toggleSection" "h2"}}>
+      {{cms-icon "h2"}}
+    </button>
+    <button {{action "toggleSection" "h3"}}>
+      {{cms-icon "h3"}}
+    </button>
+    <button {{action "toggleSection" "ul"}}>
+      {{cms-icon "list"}}
+    </button>
+    <button {{action "toggleSection" "blockquote"}}>
+      {{cms-icon "quote"}}
+    </button>
+    <button {{action "addPhoto"}}>
+      {{cms-icon "camera"}}
+    </button>
+  </div>
+  {{/if}}
+
+</div>
+
+{{#if addingImages}}
+  {{in-sidebar name="modal"
+               show=(component "image-upload-modal" imagesReady=(action "imagesReady"))
+               hooks=(hash outsideClick=(action (mut addingImages) false))   }}
+
+{{/if}}

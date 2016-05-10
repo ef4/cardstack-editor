@@ -6,7 +6,8 @@ const CMSIcon = Ember.Component.extend({
   didReceiveAttrs() {
     this.set('iconName', 'icon-' + this.get('name'));
   },
-  tagName: 'span'
+  tagName: 'span',
+  classNames: ['cms-icon']
 });
 
 CMSIcon.reopenClass({

@@ -1,0 +1,16 @@
+{{#each tools.fields key="id" as |field|}}
+  {{#if (and field.overlay
+             (eq tools.primaryPage field.page)
+         )
+  }}
+    {{#with-sidebar name=(concat "inline-field/" field.id) as |editor| }}
+      {{editor-overlay field=field
+                       hoverable=tools.editing
+                       isOpen=(and (eq tools.openedField.id field.id) tools.editing)
+                       open=tools.openField
+                       dismiss=(action tools.openField null)
+                       editor=editor
+                       }}
+    {{/with-sidebar}}
+  {{/if}}
+{{/each}}

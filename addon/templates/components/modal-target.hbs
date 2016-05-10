@@ -1,0 +1,12 @@
+<div class="modal">
+  {{#with-sidebar name="modal" as |modalContent hooks|}}
+    {{#if modalContent}}
+      <div class="modal-backdrop"></div>
+      <div class="modal-container" onclick={{action (exact-target ".modal-container" hooks.outsideClick) }}>
+        <div class="modal-dialog" >
+          {{component modalContent}}
+        </div>
+      </div>
+    {{/if}}
+  {{/with-sidebar}}
+</div>

@@ -49,11 +49,18 @@
     "ember-cli-babel": "^5.1.6",
     "ember-cli-htmlbars": "^1.0.3",
     "ember-cli-import-polyfill": "0.1.0",
+    "ember-lodash": "0.0.7",
+    "ember-mobiledoc-dom-renderer": "0.4.1",
+    "ember-mobiledoc-editor": "0.4.0",
+    "ember-mobiledoc-text-renderer": "0.3.0",
     "ember-moment": "7.0.0-beta.1",
+    "ember-one-way-controls": "0.5.2",
+    "ember-promise-helpers": "1.0.2",
     "ember-cli-moment-shim": "1.2.0",
     "ember-network": "0.3.0",
     "ember-sidebars": "0.2.1",
-    "ember-truth-helpers": "1.2.0"
+    "ember-truth-helpers": "1.2.0",
+    "ember-concurrency": "0.6.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

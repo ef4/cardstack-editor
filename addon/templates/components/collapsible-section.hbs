@@ -1,0 +1,12 @@
+<header {{action "toggle" }}>
+  <label>{{title}}</label>
+  <button class="{{unless isOpen 'closed'}}" >
+    {{cms-icon "toggle"}}
+  </button>
+  {{#if subtitle}}
+  <p>{{subtitle}}</p>
+  {{/if}}
+</header>
+{{#liquid-if isOpen class="collapsible-section-if"}}
+  {{yield}}
+{{/liquid-if}}

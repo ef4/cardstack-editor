@@ -1,0 +1,5 @@
+{{#if (non-empty-field model field (await (get model field)) )}}
+  {{yield (get model field)}}
+{{else}}
+  {{yield defaultValue}}
+{{/if}}

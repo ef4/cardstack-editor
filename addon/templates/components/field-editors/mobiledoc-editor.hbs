@@ -1,0 +1,16 @@
+{{#if (eq field 'attachmentsBody')}}
+  <div class="attachment-note">
+    <p><a href="{{fileAttachmentListUrl}}" target="file-attachments">List of all file attachments</a></p>
+
+    <p>
+      To reference an attachment,
+      <a href="{{uploadUrl}}" target="_blank">upload the file attachment,</a>
+      and then copy the link of the uploaded
+      file into body of the document.
+    </p>
+  </div>
+{{/if}}
+
+{{mobiledoc-overview mobiledoc=(get model field) change=(action (mut (get model field))) }}
+
+{{in-sidebar name=(concat "inline-field/" fieldGroupId) show=(component "cms-mobiledoc-editor" mobiledoc=(get model field) docKey=fieldGroupId on-change=(action (mut (get model field)))) }}
