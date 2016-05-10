@@ -1,0 +1,22 @@
+.field-editor-image {
+    .delete-image {
+        float: right;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .filename {
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 0 2em;
+        span {
+            font-weight: normal;
+        }
+    }
+    footer {
+        margin: 12px -.75em 0;
+    }
+}

@@ -1,0 +1,266 @@
+// Grid & Layout
+
+main {
+  margin: $baseline*2 0;
+  padding-top: $baseline*2;
+}
+
+.hero + main, .hero + .caption + main {
+  padding-top: 0;
+}
+
+.container {
+  width: 67.5em; /* 1080 */
+  margin: 0 auto;
+  position: relative;
+  @media (max-width: $tablet) {
+    width: 53em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+
+.row {
+  margin: 0 -.5em;
+  overflow: hidden;
+  @media (max-width: $phone) {
+    margin: 0;
+  }
+}
+
+.grid {
+  margin: 0 .5em;
+  float: left;
+  position: relative;
+}
+
+.grid-1-1 {
+  @extend .container;
+  @media (max-width: $phone) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.grid-3-4 {
+  width: 50.375em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 39.5em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-1-2 {
+  width: 33.25em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 26em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-1-4 {
+  width: 16.125em;
+  @extend .grid;
+
+  // questionable
+  @media (max-width: $phablet) {
+    width: 16.1em;
+  }
+  //
+
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 12.5em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-2-3 {
+  width: 44.666em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 35em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-1-3 {
+  width: 21.833em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 17em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-1-6 {
+  width: 10.416em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 8em;
+  }
+  @media (max-width: $phablet) {
+    width: 16.125em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-5-6 {
+  width: 56.08em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 44em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-1-12 {
+  width: 4.708em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 3.5em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-5-12 {
+  width: 27.625em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 21.5em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-7-12 {
+  width: 38.875em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 30.5em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.grid-11-12 {
+  width: 61.79em;
+  @extend .grid;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    width: 48.5em;
+  }
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+.main-content {
+  @extend .grid-3-4;
+  /* width: 46em; */
+  @media (max-width: $phablet) {
+    margin-bottom: 3em !important;
+  }
+  @media (max-width: $phone) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.sidebar {
+  /* width: 17.5em; */
+  @extend .grid-1-4;
+  @media (max-width: $phablet) {
+    width: 100%;
+  }
+}
+
+@media (max-width: $phone) {
+  .grid-1-1, .grid-1-2, .grid-1-3, .grid-1-4, .grid-1-6, .grid-1-12, .grid-2-3, .grid-3-4, .grid-5-6, .grid-11-12, .grid-5-12, .grid-7-12 {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.mobile-1-1 {
+  @media (max-width: $phablet) {
+    width: 33.3333em;
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+}
+
+
+// Grid inside white boxes
+
+.white-box {
+  .row {
+    margin: 0 -.5em;
+  }
+  .column-1-3 {
+    @extend .grid;
+    width: 15.45em;
+    @media (max-width: $phablet) and (min-width: $phone) {
+      width: 46%;
+    }
+  }
+  .offset-1-3 {
+    margin-left: 16.9em;
+    @media (max-width: $phablet) {
+      margin-left: .5em;
+    }
+  }
+}

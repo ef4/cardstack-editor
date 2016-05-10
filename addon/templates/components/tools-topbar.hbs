@@ -1,0 +1,27 @@
+{{#liquid-if tools.active enableGrowth=false class="tools-topbar-if"}}
+  <section class="tools-account">{{cms-icon "accounts"}}</section>
+  <section class="editor-toggle">
+    <label>Editor</label>
+    {{#toggle-switch value=tools.editing change=tools.edit }}
+      On
+    {{else}}
+      Off
+    {{/toggle-switch}}
+  </section>
+  <section {{action "maybePreviewPage"}} class="toggleable view-type {{if (eq tools.previewMode "page") 'active'}}">
+    {{cms-icon "page"}} <label>Page</label>
+  </section>
+  <section {{action (action tools.preview "tile")}} class="toggleable view-type {{if (eq tools.previewMode "tile") 'active'}}">
+    {{cms-icon name="tile"}} <label>Tile</label>
+  </section>
+  <section class="spacer"></section>
+  <section class="toggleable viewport active">{{cms-icon name="desktop"}}</section>
+  <section class="toggleable viewport">{{cms-icon name="tablet"}}</section>
+  <section class="toggleable viewport">{{cms-icon name="phone"}}</section>
+  <section class="toggleable autosave"><label>Auto-saved</label> {{cms-icon "save"}}</section>
+  <section class="under-sidebar"></section>
+{{/liquid-if}}
+
+{{#if (eq tools.previewMode "tile")}}
+  <button class="tile-preview-back" onclick={{action "cardBack" }}>&#8592; Back</button>
+{{/if}}

@@ -1,0 +1,437 @@
+// ATOMS
+
+h1, h2, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1, .major-title {
+  font-size: 3.125em;
+  line-height: 1.3em;
+  margin: .1rem 0 .1em;
+  @media (max-width: $phone) {
+    font-size: 2.125em;
+    margin-bottom: .4em;
+  }
+  a {
+    color: $black;
+    &:hover {
+      color: $aia-red;
+    }
+  }
+}
+
+h2, .__mobiledoc-editor h2, .headline {
+  font-size: 2em;
+  line-height: 1.4em;
+  margin: .5em 0;
+  @media (max-width: $phone) {
+    font-size: 1.5em;
+  }
+
+  /* mobiledoc override */
+  font-family: inherit;
+  font-weight: normal;
+  letter-spacing: inherit;
+}
+
+h3, .__mobiledoc-editor h3, .subhead {
+  font-size: 1em;
+  @extend .ArchitypeBold;
+  margin-top: 2.5em;
+
+  /* mobiledoc override */
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+p, li {
+  line-height: 1.4em;
+  sup {
+    line-height: 1em;
+  }
+}
+
+article ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2em 0;
+  li {
+    margin: 0 0 1em 1.5em;
+    text-indent: -1.5em;
+    line-height: 1.5em;
+    &:before {
+      content:"\2022";
+      margin-right: 1em;
+    }
+  }
+  &.search-results li,
+  &.filter-results li {
+    text-indent: 0;
+    &:before {
+      content: "";
+    }
+  }
+}
+
+ul.col-2, .__mobiledoc-editor ul {
+  columns: 2;
+  column-gap: 2em;
+  @media (max-width: $phone) {
+    columns: 1;
+    column-gap: 0;
+  }
+}
+
+ul.col-3 {
+  columns: 3;
+  column-gap: 2em;
+  @media (max-width: $tablet) {
+    columns: 2;
+    column-gap: 2em;
+  }
+  @media (max-width: $phone) {
+    columns: 1;
+    column-gap: 0;
+  }
+}
+
+// Links
+
+a {
+  color: $aia-red;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    .external-link g {
+      fill: $aia-red;
+    }
+  }
+}
+
+p a:hover,
+li a:hover {
+  text-decoration: underline;
+}
+
+.action-button {
+  background: $white;
+  text-align: center;
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  padding-top: .5em;
+  transition: all .1s ease-in-out;
+  .icon {
+    width: 1em;
+  }
+  g, .st0 {
+    fill: $aia-red;
+  }
+  &:hover {
+    text-decoration: none;
+    g, .st0 {
+      fill: $black;
+    }
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.large-button {
+  display: inline-block;
+  /* padding: 1em 1em .75em; */
+  background-color: $aia-red;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  color: $white;
+  min-width: 9em;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+
+  // because IE
+  height: 50px;
+  line-height: 29px;
+  padding: .75em 1em;
+  //
+  &:hover {
+    color: $white;
+    background-color: $black;
+    text-decoration: none;
+  }
+  &.cancel {
+    background-color: $black;
+  }
+  @extend .with-arrow-white;
+  &.align-right {
+    margin-right: 0;
+  }
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    font-size: .9em;
+  }
+  @media (max-width: $phablet) {
+    &.align-right {
+      float: none;
+    }
+  }
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+
+  &.standard-width {
+    width: 16.125em;
+    max-width: 100%;
+    @media (max-width: $phablet) {
+      width: 16.1em;
+    }
+    @media (max-width: $tablet) and (min-width: $phablet) {
+      width: 12.5em;
+    }
+    @media (max-width: $phone) {
+      width: 100%;
+    }
+  }
+}
+
+.textual-button {
+  color: $aia-red;
+  text-transform: uppercase;
+  font-size: .75em;
+  line-height: 1.125em;
+  letter-spacing: 1px;
+  display: block;
+  margin: 1em 0;
+}
+
+.tag {
+  @extend .textual-button;
+  display: inline-block;
+  margin: 0;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.course, .document-number {
+  display: inline-block;
+  margin-right: .5em;
+  margin-bottom: 1em;
+  border: 1px solid $text-gray;
+  padding: .2em .4em 0;
+  color: $text-gray;
+  &:hover {
+    border-color: $black;
+    color: $black;
+    text-decoration: none;
+  }
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    font-size: .8em;
+  }
+}
+
+.section-divider {
+  @extend h1;
+  margin: 1em 0 .5rem;
+}
+
+img, .__mobiledoc-editor img {
+  width: 100%;
+  height: auto;
+  /* margin: 1em 0;    I can't remember why i put margin on image top */
+  margin: 0 0 1em;
+}
+
+blockquote, .__mobiledoc-editor blockquote {
+  background: white;
+  padding: 1.3125em 2.5em;
+  margin: 2em 0;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  @media (max-width: $phablet) {
+      padding: 1.3125em 1.5em;
+      font-size: 1.3em;
+    }
+  p {
+      margin-top: 1em;
+      margin-bottom: 0;
+  }
+  p:first-child {
+      margin-top: 0;
+  }
+
+  /* These are unfortunately needed to override default styles that ship
+   with mobiledoc-editor. */
+  border: 0;
+  color: inherit;
+}
+
+input {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  font-family: 'Architype';
+}
+
+.headline {
+  margin: 0 0 1rem;
+  margin: 0;
+  @media (max-width: $tablet) and (min-width: $phablet) {
+    font-size: 1.6em;
+  }
+}
+
+/*
+.box-title {
+  @extend h2;
+  margin: 0;
+}
+*/
+
+.caption {
+  font-size: .6em;
+  color: $aia-gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.standard-label {
+  text-transform: uppercase;
+  font-size: 0.6rem !important;
+  @extend .ArchitypeBold;
+  line-height: 1.7rem;
+  letter-spacing: .05em;
+  margin: 0 0 .35rem;
+}
+
+.featured-label {
+  @extend .standard-label;
+  color: $aia-red;
+  span {
+    color: $black;
+    margin-left: .5em;
+  }
+}
+
+.element-label {
+  @extend .standard-label;
+  color: $text-gray;
+}
+
+p.date, p.chapter {
+  @extend .standard-label;
+  font-weight: normal;
+  color: $aia-gray;
+}
+
+.page-title {
+  color: $text-gray;
+  font-size: 2em;
+  line-height: 1.35em;
+  display: inline-block;
+  margin: 0 0 1em;
+  @media (max-width: $phone) {
+    font-size: 1.25em;
+  }
+}
+
+/*
+.small {
+  font-size: .8em;
+  margin: 0;
+}
+*/
+
+.note {
+  color: $text-gray;
+}
+
+.tab {
+  background-color: $aia-gray;
+  padding: 1em 1.5em .75em;
+  color: $white;
+  display: inline-block;
+  float: left;
+  margin-right: 1px;
+  &.active,
+  &:hover {
+    background-color: $white;
+    color: $aia-gray;
+    text-decoration: none;
+  }
+  @media (max-width: $tablet) {
+    /* font-size: .75em; */
+  }
+}
+
+.filter-type {
+  @extend .tab;
+  @extend .with-arrow-black;
+  background-color: $white;
+  color: $black;
+  margin-bottom: .4em;
+  &:after {
+    transition: all .3s ease-in-out;
+  }
+  &:hover,
+  &.active {
+    text-decoration: none !important;
+    color: $black;
+      &:after {
+      transform: rotate(90deg);
+      margin-top: 2px;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.more-button {
+  background-color: $white;
+  padding: 1em 1.5em .75em;
+  margin: 1em 0 2em;
+  display: inline-block;
+  &:after {
+    content: "+";
+    float: right;
+    margin-left: 1em;
+  }
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+  @media (max-width: $phone) {
+    margin-bottom: 3em;
+  }
+}
+
+svg.icon,
+img.icon {
+  max-width: 2em;
+  g, .st0 {
+    fill: $aia-red;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $aia-light-gray;
+}
+
+.external-link {
+  margin-left: .25em;
+}
+
+.no-results {
+  display: block;
+  margin-top: 3em;
+  @media (max-width: $phone) {
+    margin-bottom: 4em;
+  }
+}
+
+.chapter {
+  line-height: 1.4em;
+}

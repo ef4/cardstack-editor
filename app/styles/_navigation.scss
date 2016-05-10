@@ -1,0 +1,380 @@
+// Navigation
+
+#main-nav {
+  background-color: $aia-gray;
+  position: fixed;
+  width: 100%;
+  top: 59px;
+  .primary-nav {
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
+    overflow: hidden;
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    white-space: nowrap;
+    li {
+      border-right: 1px solid #afafaf;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      width: 12.5%;
+      float: left;
+      a {
+        display: inline-block;
+        color: $white;
+        padding: 1rem .75rem 1rem;
+        width: 100%;
+        &:hover {
+          background-color: $white;
+          color: $aia-gray;
+          text-decoration: none;
+        }
+      }
+      &.active {
+        a {
+          background-color: $white;
+          color: $aia-gray;
+          text-decoration: none;
+        }
+      }
+      &.contracts-link {
+        display: block; 
+        border: none;
+        float: left;
+        width: 12.5%;
+        a {
+          width: 100%;
+          display: inline-block;
+          svg {
+            margin-left: .2em;
+            position: relative;
+            top: 1px;
+            g, st0 {
+              stroke: $white;
+            }
+            @media (max-width: $tablet) {
+              height: 13px;
+            }
+            @media (max-width: $phablet) {
+              height: 20px;
+              top: 3px;
+              g, st0 {
+                stroke: $black;
+              }
+            }
+          }
+        }
+        &:hover a svg {
+          g, st0 {
+            stroke: $aia-gray;
+          }
+        }
+      }
+    }
+    @media (max-width: $phablet) {
+      li {
+        float: none;
+        width: 100%;
+        &.contracts-link {
+          text-align: left;
+          width: 100%;
+          &:after, &:hover:after {
+            content: "";
+          }
+          a svg {
+            float: right;
+            height: 25px;
+            width: 15px;
+            top: 0;
+            right: 4px;
+          }
+          &:hover a svg g {
+            stroke: $aia-red;
+          }
+        }
+        &:after {
+          content: url(/icons/aia-carrot-black.svg);
+          width: .5em;
+          /* float: right; */
+          position: absolute;
+          right: 1em;
+          top: 33%;
+        }
+        a {
+          font-size: 1em;
+        }
+        &:hover {
+          a {
+            color: $aia-red;
+          }
+          &:after {
+            content: url(/icons/aia-carrot-red.svg);
+          }
+        }
+      }
+    }
+  }
+  .secondary-nav {
+    display: none;
+    @media (max-width: $phone) {
+      display: block;
+    }
+  }
+  @media (max-width: $phablet) {
+    display: none;
+    background-color: $white;
+    border: none;
+    position: absolute;
+    top: 0;
+    &.open-face-hamburger {
+      display: block;
+    }
+    .container {
+      padding: 0;
+      width: 100%;
+    }
+    ul.primary-nav,
+    ul.secondary-nav {
+      display: block ;
+      li {
+        display: block;
+        text-align: left;
+        border: none;
+        a {
+          color: $black;
+          display: block;
+        }
+      }
+      &.primary-nav {
+        font-size: 1.4em;
+        li {
+          border-bottom: 2px solid $aia-bg-gray;
+          a {
+            padding: 1.5rem 1rem 1.25rem;
+          }
+        }
+      }
+      &.secondary-nav {
+        padding: 1.5rem 0 4rem;
+        li {
+          margin-bottom: 1rem;
+          a {
+            padding: 0 1rem;
+          }
+          &:hover a {
+            color: $aia-red;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $phablet) {
+    top: 60px;
+    position: fixed;
+    overflow: scroll;
+    height: 100%;
+  }
+}
+
+.aia-header {
+  position: relative;
+  z-index: 10;
+}
+
+
+// Mega Menu
+
+#main-nav {
+  .mega-menu {
+      position: absolute;
+      width: 100%;
+      background-color: white;
+      z-index: -1;
+      box-shadow: 0px 7px 15px .01em rgba(0,0,0,.5);
+      border-bottom: 2px solid $aia-red;
+      padding: .5rem 0 1rem;
+      min-height: 23.4em;
+      overflow: hidden;
+      @media (max-width: $phablet) {
+        display: none;
+      }
+  }
+  .aia-nav {
+    @extend .container;
+    background-color: $white;
+    overflow-x: hidden;
+    @media (max-width: $phone) {
+      min-height: inherit;
+      padding: 0;
+      margin: 0 1em 1em;
+    }
+    p.nav-column-title {
+      margin-bottom: .5rem;
+      padding-left: 1.5rem;
+      font-weight: bold;
+    }
+    .grid-1-4 {
+      overflow: hidden;
+    }
+    .nav-column {
+      padding-left: 1.5em;
+      margin-top: 0;
+      li {
+        margin-bottom: .5em;
+        a {
+          color: $black;
+          &:hover {
+            text-decoration: none;
+            color: $aia-red;
+            svg {
+              g, st0 {
+                stroke: $aia-red;
+              }
+            }
+          }
+          svg {
+            margin-left: .25em;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+      &.multi {
+        /*
+        display: flex;
+        flex-flow: column wrap;
+        max-height: 11em;
+        */
+        column-count: 2; /* change for IE 10 */
+        li {
+            @extend .grid-1-4;
+            margin-bottom: .5em;
+        }
+      }
+    }
+  }
+}
+
+
+// Secondary Menu for Mobile
+
+.nav-button {
+  display: none;
+  @extend .ArchitypeLight;
+  width: 100%;
+  padding: 1.5rem 1rem 1rem;
+  background-color: $white;
+  font-size: 1.4em;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 2px solid $aia-bg-gray;
+  &:hover {;
+    color: $aia-red;
+    &:after {
+      content: url(/icons/aia-carrot-red.svg);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &:after {
+    content: url(/icons/aia-carrot-black.svg);
+    width: .5em;
+    position: absolute;
+    right: 1em;
+  }
+  @media (max-width: $phablet) {
+    display: block;
+  }
+  @media (max-width: $phone) {
+    &:after {
+      right: 2em;
+    }
+  }
+  &.active {
+    color: $aia-red;
+    margin-bottom: 0;
+    &:after {
+      content: url(/icons/aia-carrot-red.svg);
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+.secondary-mobile-nav {
+  @media (max-width: $phablet) {
+    background-color: $white;
+    margin-bottom: 2em;
+    .aia-nav {
+      padding: 0;
+      display: none; /* hiding until click */
+      overflow: hidden;
+      &.opened {
+        display: block;
+        .nav-column-title + .row {
+          margin: 0;
+        }
+      }
+    }
+    a:hover {
+      text-decoration: none !important;
+    }
+    .grid-1-4 {
+      width: 100%;
+      & > br {
+        display: none;
+      }
+    }
+    .nav-column-title {
+      display: none;
+    }
+    .nav-column {
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 1rem 1rem .75rem;
+        font-size: 1.2em;
+        border-bottom: 2px solid $aia-bg-gray;
+        &.nav-text {
+          border-bottom: 0;
+          padding-bottom: 0;
+          font-size: 1em;
+          padding-top: 1.25em;
+        }
+        a {
+          color: $black;
+          .aia-icon {
+            float: right;
+            margin-right: 1em;
+          }
+        }
+        &:hover a {
+          color: $aia-red;
+          svg g {
+            stroke: $aia-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Stop Gap Solution for current landing page problem
+main .landing-page-menu {
+  p.nav-column-title {
+    padding-left: 0;
+  }
+  .nav-column {
+    padding-left: 0;
+  }
+  .row > .nav-column {
+    padding-left: .5em;
+  }
+}

@@ -1,0 +1,12 @@
+<svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g id="Tile-Image-Cropper" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Empty-state" sketch:type="MSArtboardGroup" transform="translate(-1153.000000, -230.000000)">
+            <g id="File-selected" sketch:type="MSLayerGroup" transform="translate(0.000000, -3.000000)">
+                <g id="Group-5" transform="translate(1154.000000, 234.000000)" sketch:type="MSShapeGroup">
+                    <circle id="Oval-41" stroke="#374144" fill="#FFFFFF" cx="4.5" cy="4.5" r="4.5"></circle>
+                    <path d="M4.64329311,6.92577136 L7.07928913,4.4978499 C7.09944588,4.47776147 7.1109034,4.45040702 7.1109034,4.42198403 L7.1109034,2.59009047 C7.1109034,2.54692172 7.08501789,2.50802711 7.04534093,2.49157169 C7.00587614,2.47490257 6.96025823,2.48409196 6.92970485,2.51443831 L4.56839488,4.88850569 L2.19987091,2.51614796 C2.1695297,2.48558791 2.1239118,2.47661223 2.08423483,2.49306764 C2.04477004,2.50973676 2.01909671,2.54863137 2.01909671,2.59180012 L2.01909671,4.42369368 C2.01909671,4.45211667 2.03055423,4.47968483 2.05071098,4.49955955 L4.49434535,6.92598507 C4.53550755,6.96701675 4.60213091,6.96680304 4.64329311,6.92577136" id="Fill-43-Copy-11" fill="#545454"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,39 @@
+.toggle-switch {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: inline-block;
+    width: 3em;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 800;
+    background-color: black;
+    top: 0;
+    margin-left: 0.2em;
+    .slider {
+        background-color: $tools-color-D;
+        color: black;
+        border-radius: 10px;
+        position: relative;
+        padding: 0.5em 0.4em 0.4em 0.7em;
+        font-size: 0.6em;
+        box-sizing: border-box;
+        width: 67%;
+        line-height: 1.1em;
+        transition: transform 250ms ease, background-color 250ms ease;
+        text-align: center;
+    }
+    .slider-right {
+        transform: translateX(50%);
+        background-color: white;
+        padding-left: 1em;
+    }
+}
+
+.tools-sidebar {
+    .toggle-switch {
+        .slider-right {
+            padding-left: .25em;
+        }
+    }
+}

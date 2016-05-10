@@ -1,0 +1,13 @@
+.editor-toolbar {
+    list-style-type: none;
+    li {
+        text-indent: 0;
+        &:before { content: none }
+        margin: 0;
+        display: inline-block;
+    }
+    margin-top: 0;
+    button.active {
+        border: 1px solid red;
+    }
+}

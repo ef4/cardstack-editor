@@ -1,0 +1,20 @@
+.choose-terms {
+    margin: 0;
+    font-size: 0.75em;
+    .checkbox {
+        font-weight: 800;
+        margin: 0 0 .5em;
+        color: $tools-text;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    label {
+        cursor: pointer;
+    }
+    &.disabled {
+        label {
+            color: $tools-text-fade;
+        }
+    }
+}

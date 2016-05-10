@@ -1,0 +1,199 @@
+// HEADER
+
+#header {
+  background: $aia-red;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: .75em 0 .5em;
+  overflow: hidden;
+  z-index: 10;
+  height: 60px;
+  @media (max-width: $phablet) {
+    padding: .75em 0 0;
+  }
+  .header-logo {
+    display: inline-block;
+  }
+  .aia-logo {
+    width: 112px;
+    height: 32.5px;
+    margin: 0;
+    display: block;
+  }
+  .header-items {
+    color: $white;
+    float: right;
+    margin-top: .5em;
+    a {
+      color: $white;
+      line-height: 1.4em;
+      float: left;
+      margin-left: 1em;
+      @media (max-width: $phone) {
+        display: none;
+        &.header-search {
+          display: inline-block;
+        }
+      }
+      &.header-search {
+        width: 1em;
+        height: 1em;
+        top: 2px;
+        position: relative;
+        svg {
+          width: 1.5em;
+        }
+        .icon {
+          width: 1em;
+          height: 1em;
+        }
+        g,.st0 {
+          fill: $white;
+        }
+      }
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      float: left;
+      cursor: pointer;
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      float: left;
+      cursor: pointer;
+      &.header-nav-toggle {
+        display: none;
+        margin-left: 2em;
+        background-color: $aia-red;
+        height: 60px;
+        width: 60px;
+        margin-top: -20px;
+        transition: all .2s ease-in-out;
+        .menu-icon {
+          path {
+            stroke: $white;
+            transition: all .2s ease-in-out;
+          }
+          #top {
+            transform: rotate(0deg) translate(0,0);
+          }
+          #middle {
+            opacity: 1;
+          }
+          #bottom {
+            transform: rotate(0deg) translate(0,0);
+          }
+        }
+        &.close {
+          background-color: $white;
+          transition: all .2s ease-in-out;
+          .menu-icon {
+            path {
+              stroke: $black;
+              transition: all .2s ease-in-out;
+            }
+            #top {
+              transform: rotate(45deg) translate(5px, -6px);
+            }
+            #middle {
+              opacity: 0;
+            }
+            #bottom {
+              transform: rotate(-45deg) translate(-15px, -2px);
+            }
+          }
+        }
+        @media (max-width: $phablet) {
+          display: inline-block;
+        }
+        /*
+        &.close {
+          background-color: $white;
+        }
+        @media (max-width: $phablet) {
+          display: inline-block;
+          height: 60px;
+          width: 60px;
+          margin-top: -20px;
+          margin-bottom: -8px;
+        }
+        */
+      }
+    }
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Footer
+
+#aia-footer {
+  background-color: $black;
+  color: $white;
+  padding: 3em 0;
+  margin-top: 4em;
+  .aia-logo {
+    max-width: 12em;
+    border: none;
+  }
+  a {
+    color: $white;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    &.inline li {
+      margin-right: 1em;
+    }
+    @media (max-width: $phablet) {
+      margin: 1em 0 2em;
+    }
+  }
+  .grid-1-6 {
+    @media (max-width: $phone) {
+      width: 50%;
+    }
+  }
+  .footer-bottom {
+    margin-top: 4em;
+    @media (max-width: $phablet) {
+      margin-top: 2em;
+    }
+    color: $text-gray;
+    a {
+      color: $text-gray;
+    }
+  }
+  svg.icon,
+  .icon {
+    width: 1em;
+    margin: 0;
+    g, .st0 {
+      fill: $white;
+    }
+    &:hover {
+      text-decoration: none;
+      g {
+        fill: $aia-red;
+      }
+    }
+    @media (max-width: $phablet) {
+      width: 1.25em;
+      margin-right: 1em;
+    }
+  }
+  .social-icons {
+    a:hover {
+      text-decoration: none;
+      g, .st0 {
+        fill: $aia-red;
+      }
+    }
+  }
+}

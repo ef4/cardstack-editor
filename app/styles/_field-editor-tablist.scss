@@ -1,0 +1,16 @@
+.tablist-editor {
+    .tab-title-control {
+        display: flex;
+        align-items: center;
+        input {
+            flex: 1;
+        }
+        .delete-tab {
+            cursor: pointer;
+            padding-left: 0.5em;
+            &.hidden {
+                visibility: hidden;
+            }
+        }
+    }
+}

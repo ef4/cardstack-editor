@@ -1,0 +1,20 @@
+.login-control {
+    a {
+        cursor: pointer;
+    }
+}
+
+.login-control-overlay {
+    input {
+        display: block;
+        font-size: 1.3em;
+        padding: 0.2em 1em;
+    }
+
+    button {
+        width: 50%;
+        margin-left: 25%;
+        font-size: 1.3em;
+        padding: 0.2em 1em;
+    }
+}

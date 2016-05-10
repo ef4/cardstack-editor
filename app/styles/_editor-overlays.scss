@@ -1,0 +1,111 @@
+.editor-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform-origin: 0 0;
+
+
+    // it's important that we use hidden here because it stops us from
+    // blocking mouse events for events that our label and padding may
+    // be covering up.
+    visibility: hidden;
+
+    &.reveal {
+        visibility: initial;
+    }
+
+    &.is-open {
+        // this lets our scrims block out every other editor-overlay
+        z-index: 1;
+    }
+
+    label {
+        z-index: 1;
+        display: inline-block;
+        padding: 0.2em 1.5em 0em;
+        text-transform: uppercase;
+        font-size: 10px;
+        @extend .AvenirRegular;
+        letter-spacing: .1em;
+        position: absolute;
+        top: -2em;
+        max-height: 2em;
+        white-space: nowrap;
+        transform-origin: bottom left;
+    }
+
+    .overlay-border {
+        padding: 10px;
+        border: 2px solid $tools-active-color;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &.has-editor.is-open .overlay-border {
+        background: #fff;
+    }
+    .target {
+        width: 100%;
+        height: 100%;
+    }
+    label {
+        background-color: $tools-active-color;
+        color: white;
+    }
+
+    &.hoverable {
+        .target {
+            // Only the target area itself is visible initially, and it
+            // doesn't have any content. But this makes it eligible for
+            // mouse events.
+            visibility: initial;
+        }
+    }
+}
+
+.overlay-scrim {
+    width: 200vw;
+    height: 200vh;
+    background-color: #000;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    &.top {
+        bottom: 100%;
+        left: -100vw
+    }
+    &.bottom {
+        top: 100%;
+        left: -100vw;
+    }
+    &.left {
+        right: 100%;
+        top: 0;
+        height: 100%;
+    }
+    &.right {
+        left: 100%;
+        top: 0;
+        height: 100%;
+    }
+}
+
+.inline-editor {
+    cursor: initial;
+    @import "atoms";
+    @import "molecules";
+    @import "cards";
+}
+
+.style-imports {
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+}

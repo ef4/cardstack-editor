@@ -1,0 +1,7 @@
+{{#if tools.primaryPage}}
+  {{#if (eq tools.primaryPage.model.type "customization")}}
+    {{customization-edit model=tools.primaryPage.model }}
+  {{else}}
+    {{content-edit returnToHome=returnToHome tools=tools}}
+  {{/if}}
+{{/if}}

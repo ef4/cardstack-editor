@@ -1,0 +1,112 @@
+.tile-preview {
+    border: 1px solid darken($white, 66%);
+    min-height: 400px;
+    margin: 0 auto;
+    &.desktop {
+        width: 1010px;
+    }
+    &.tablet {
+        width: 570px;
+    }
+    &.mobile {
+        width: 375px;
+        height: 667px;
+    }
+}
+
+.image-crop-box {
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#image-cropping {
+    @extend .AvenirRegular;
+    margin-bottom: 10em; /* temp */
+    color: rgba(250,250,250,.44);
+    overflow: hidden;
+    .view-section-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        small {
+            margin-left: 2em;
+            font-weight: normal;
+            text-transform: none;
+        }
+    }
+    .tools-btn {
+        margin-top: 10px;
+    }
+    .full-size-image {
+        border: 1px dashed #4c4c4c;
+        min-height: 50vw;
+        max-height: 95vh;
+        margin-bottom: 3em;
+        @extend .image-crop-box;
+        a {
+            color: $white;
+        }
+        &.with-image {
+            border-style: solid;
+        }
+    }
+    .cropping-section {
+        overflow: hidden;
+        margin-bottom: 3em;
+        > p {
+            display: block;
+            clear: both;
+        }
+    }
+    .image-crops {
+        /*
+                transform: scale(.75,.75) translate(0, -16em);
+                position: relative;
+                left: -15.5%;
+                width: 125%;
+                float: left;
+                margin-bottom: -22em;
+       */
+    }
+    .custom-crop {
+        @extend .image-crop-box;
+        border: 1px solid #4c4c4c;
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        cursor: pointer;
+        span {
+            background-color: rgba(41,42,44,.4);
+            color: $white;
+            padding: 1em;
+            border-radius: 3px;
+            display: block;
+        }
+        &.small-image {
+            background-image: url(/icons/bg-x.svg);
+            background-size: cover;
+        }
+    }
+    button.for-crop {
+        border: 1px solid $white;
+        color: $white;
+        background-color: $black;
+        font-size: 12px;
+        padding: .5em 1.5em;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .full-image-size {
+        display: inline-block;
+        position: relative;
+        left: 36.5%;
+        text-align: center;
+        color: $white;
+        font-weight: 100;
+    }
+}

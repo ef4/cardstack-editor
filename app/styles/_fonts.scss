@@ -1,0 +1,57 @@
+// FONTS
+
+@font-face {
+  font-family: 'Architype';
+  /* src: url('../cardstack-cms/fonts/Architype-Light.ttf'); */
+
+  src: url('../cardstack-cms/fonts/Architype-Light.eot');
+        src: url('../cardstack-cms/fonts/Architype-Light.eot?#iefix') format('embedded-opentype'),
+             url('../cardstack-cms/fonts/Architype-Light.woff') format('woff'),
+             url('../cardstack-cms/fonts/Architype-Light.ttf') format('truetype'),
+             url('../cardstack-cms/fonts/Architype-Light.svg#architype_lightregular') format('svg');
+}
+
+@font-face {
+  font-family: 'Architype';
+        /* src: url('../cardstack-cms/fonts/Architype-Bold.ttf'); */
+
+  font-weight: bold;
+
+  src: url('../cardstack-cms/fonts/Architype-Bold.eot');
+        src: url('../cardstack-cms/fonts/Architype-Bold.eot?#iefix') format('embedded-opentype'),
+             url('../cardstack-cms/fonts/Architype-Bold.woff') format('woff'),
+             url('../cardstack-cms/fonts/Architype-Bold.ttf') format('truetype'),
+             url('../cardstack-cms/fonts/Architype-Bold.svg#architype_lightregular') format('svg');
+}
+
+@font-face {
+  font-family: 'RubotoCondensed'; src: url('../cardstack-cms/fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'RubotoCondensed'; src: url('../cardstack-cms/fonts/RobotoCondensed-Bold.ttf'); font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Avenir'; src: url('../cardstack-cms/fonts/Avenir.ttc');
+}
+
+.ArchitypeLight {
+        font-family: 'Architype', serif;
+        font-weight: normal;
+}
+
+.ArchitypeBold {
+        font-family: 'Architype', serif;
+        font-weight: bold;
+}
+
+.RubotoRegular {
+        font-family: 'RubotoCondensed', sans-serif;
+        font-weight: normal;
+}
+
+.AvenirRegular {
+        font-family: 'Avenir', sans-serif;
+        font-weight: normal;
+}

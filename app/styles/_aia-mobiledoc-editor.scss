@@ -1,0 +1,144 @@
+.aia-mobiledoc-editor {
+
+    /* Application-specific styling for ember-mobiledoc-editor */
+    .__mobiledoc-editor {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        margin: 0;
+    }
+
+    // this helps keep the overlay mobiledoc editors lined up with
+    // their underlying content. When we lift the rendered mobiledoc
+    // into an overlay, it brings child margins that were not
+    // originally measured by our tracker.
+    .mobiledoc-editor__editor {
+        > *:first-child {
+            margin-top: 0;
+        }
+    }
+
+    // Content Editing Popovers
+
+
+}
+
+
+.block-options {
+    position: absolute;
+    top: 46px;
+    left: -34px;
+    background-color: $white;
+    border-radius: 3px;
+    padding: 12px 12px 6px;
+    display: inline-block;
+    width: 165px;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+    &:after,
+    &:before {
+        bottom: 100%;
+        left: 25%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #ffffff;
+        border-width: 14px;
+        margin-left: -14px;
+    }
+    &:before {
+        border-color: rgba(233, 233, 233, 0);
+        border-bottom-color: #e9e9e9;
+        border-width: 15px;
+        margin-left: -15px;
+    }
+}
+
+.block-control {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: transform 250ms ease;
+}
+
+.block-options button, .paragraph-options button, .current-block {
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 16px;
+    line-height: 11px;
+    border: 1px solid $tools-color-F;
+    text-align: left;
+    border-radius: 3px;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 6px 6px 0;
+    padding: 7px 7px;
+    cursor: pointer;
+    &:nth-child(4n) {
+        margin-right: 0;
+    }
+    svg {
+        width: 15px;
+        height: 13px;
+    }
+    &.active,
+    &.active:hover {
+        background-color: $tools-active-color;
+        border-color: darken($tools-active-color, 10%);
+        svg {
+            g {
+                fill: $white;
+            }
+        }
+    }
+    &:hover {
+        border-color: $tools-active-color;
+        svg {
+            g {
+                fill: $tools-active-color;
+            }
+        }
+    }
+}
+
+.paragraph-options {
+    @extend .block-options;
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-shadow: 0 -3px 10px rgba(0,0,0,.2);
+    &:after,
+    &:before {
+        top: 100%;
+        left: 50%;
+    }
+    &:after {
+        border-top-color: #ffffff;
+        border-bottom: none;
+    }
+    &:before {
+        border-top-color: #e9e9e9;
+        border-bottom: none;
+    }
+    z-index:1;
+    width: auto;
+
+    input[type="text"] {
+        @extend .AvenirRegular;
+        padding: .1em .5em;
+    }
+    .checkbox {
+        font-size: 11px;
+        display: inline-block;
+        margin-left: .5em;
+        color: #9b9b9b;
+    }
+}

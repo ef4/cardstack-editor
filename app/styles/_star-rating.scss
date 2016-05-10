@@ -1,0 +1,46 @@
+.star-rating {
+    padding: .25em 0 .5em;
+
+    svg g {
+        stroke: black;
+        fill: none;
+    }
+    .filled svg g {
+        stroke: none;
+        fill: black;
+    }
+
+    &.disabled {
+        svg g {
+            stroke: $tools-color-D;
+            fill: none;
+        }
+        .filled svg g {
+            stroke: none;
+            fill: $tools-color-D;
+        }
+    }
+
+    > span {
+        cursor: pointer;
+        margin-right: .1em;
+        display: inline-block;
+        animation-duration: 250ms;
+        animation-timing-function: ease-out;
+        &.jump {
+            animation-name: star-jump;
+        }
+    }
+}
+
+@keyframes star-jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

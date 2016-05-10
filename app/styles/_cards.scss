@@ -1,0 +1,475 @@
+// CARDS
+
+.card-padding {
+    padding: 1.25em;
+    .large-button {
+        width: 100%;
+    }
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        padding: 1em;
+    }
+}
+
+.card-height-1 {
+    height: 24.375em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        height: 17.411em;
+    }
+    @media (max-width: $phone) {
+        height: auto;
+    }
+}
+
+.card-height-2 {
+    height: 49.75em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        height: 35.536em;
+    }
+    @media (max-width: $phone) {
+        height: auto;
+    }
+}
+
+.aia-card {
+    background-color: white;
+    margin: 0 0.5em 1em;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    /*
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    */
+    transition: none;
+    background-size: cover;
+    background-position: 50%;
+    overflow: hidden;
+    &:hover {
+        /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
+        background: #d9d9d9; /* #eee from notes, but #d9d9d9 from comp */
+        background-size: cover !important;
+        background-position: 50% !important;
+        .text-fade {
+            border-bottom: .75em solid #d9d9d9;
+            background: linear-gradient(to top, rgba(217,217,217,1) 0%,rgba(217,217,217,0) 100%);
+        }
+        .aia-card-image {
+            opacity: .8;
+        }
+    }
+    a {
+        color: inherit;
+        &:hover {
+            text-decoration: none;
+            /* h1 {
+                color: $aia-red;
+            } */
+        }
+        &.title {
+            display: block;
+        }
+
+        &.title:hover {
+            h1 {
+              color: inherit;
+            }
+        }
+    }
+    h1 {
+        font-size: 1.8em;
+        line-height: 1.2em;
+        margin: 0 0 .5em;
+        &.smaller {
+            font-size: 1.2em;
+        }
+    }
+    p {
+        font-size: .9em;
+        a {
+            color: $aia-red;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    blockquote {
+        margin: 1em 0;
+        padding: 0;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        background-color: transparent;
+        cite {
+            font-size: .8em;
+            font-style: normal;
+            margin: .5em 0 0;
+            display: inline-block;
+        }
+    }
+    .standard-label {
+        line-height: 1.4em;
+        margin-bottom: .75em;
+    }
+    .aia-card-image {
+        display: block;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        @extend .card-height-1;
+        &.half {
+            height: 11.25em;
+            @media (max-width: $tablet) and (min-width: $phablet) {
+                height: 8.7em;
+            }
+        }
+    }
+    .video {
+        display: block;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        .video-play {
+            text-align: center;
+            margin-top: 8.5em;
+        }
+        &:hover {
+            .video-play {
+                g {
+                    stroke: $aia-red;
+                }
+            }
+        }
+    }
+    .event-location {
+        margin: 1em 0;
+        p {
+            margin: 0;
+        }
+    }
+    ul {
+        margin: 1em 0;
+        padding: 0;
+        li {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.25em;
+            border-bottom: 1px solid $aia-light-gray;
+            &:last-child {
+                border: none;
+            }
+            a {
+                color: $black;
+                &:hover {
+                    color: $aia-red;
+                }
+            }
+        }
+    }
+    /*
+  &:hover {
+    transform: scale(1.06);
+  }
+   */
+    &.featured {
+        background-color: $aia-red;
+        color: $white;
+        &:hover {
+            /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); */
+            background: $aia-red;
+            a, h1 {
+                color: $white;
+            }
+        }
+        .large-button {
+            padding: 0;
+            margin-bottom: 0;
+            position: absolute;
+            bottom: 1em;
+            width: 85%;
+            &:hover {
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            @media (max-width: $phone) {
+                position: relative;
+                bottom: inherit;
+                margin-top: 2em;
+                width: 100%;
+            }
+        }
+    }
+    &.jobs-card {
+        &:hover {
+            background-color: $white;
+        }
+    }
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        h1 {
+            font-size: 1.3em;
+            &.smaller {
+                font-size: 1em;
+            }
+        }
+        p {
+            font-size: .8em;
+        }
+        .standard-label {
+            font-size: .6em;
+        }
+    }
+    @media (max-width: $phone) {
+        margin: 0 0 2em;
+        transform: none;
+        .aia-card-image {
+            height: 100%;
+        }
+    }
+}
+
+.main-content .tile-group {
+  margin-left: -.5em;
+  width: 103%;
+}
+.tile-group {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+.aia-card-1x1 {
+    @extend .grid-1-4;
+    @extend .aia-card;
+    @extend .card-height-1;
+    .aia-card-image {
+        @extend .card-height-1;
+    }
+}
+
+.aia-card-2x1 {
+    @extend .aia-card;
+    @extend .grid-1-2;
+    @extend .card-height-1;
+}
+
+.aia-card-3x1 {
+    @extend .aia-card;
+    @extend .grid-3-4;
+    @extend .card-height-1;
+}
+
+.aia-card-1x2 {
+    @extend .aia-card-1x1;
+    @extend .card-height-2;
+}
+
+.aia-card-4x1 {
+    @extend .aia-card;
+    @extend .grid-1-1;
+    @extend .card-height-1;
+    .card-padding {
+        position: absolute;
+        bottom: 0;
+        padding: 2em;
+    }
+    h1, a {
+        color: $white;
+        max-width: 20em;
+    }
+    h1 {
+        font-size: 2.5em;
+        @media (max-width: $phone) {
+            font-size: 2em;
+        }
+    }
+    h1 + p {
+        display: none;
+    }
+    .hero-link {
+        @extend .with-arrow-white;
+        &:after {
+            margin-top: 0;
+        }
+    }
+    &:hover {
+        .aia-card-image {
+            opacity: 1;
+        }
+    }
+    .text-fade {
+        border: none;
+        background: none;
+    }
+}
+
+.square-height {
+    height: 17.5em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        height: 12.5em;
+    }
+    @media (max-width: $phone) {
+        height: auto;
+    }
+    .aia-card-image {
+        float: left;
+        margin-right: 1.25em;
+        height: 17.5em;
+        width: 17.5em;
+        @media (max-width: $tablet) and (min-width: $phablet) {
+            height: 12.5em;
+            width: 12.5em;
+        }
+        @media (max-width: $phablet) {
+            width: 16em;
+        }
+        @media (max-width: $phone) {
+            float: none;
+            width: 100%;
+            height: 0;
+            padding-bottom: 50%;
+        }
+    }
+    &.aia-card-2x1 {
+        .aia-card-image {
+            height: 17.5em;
+            overflow: hidden;
+            @media (max-width: $phone) {
+                width: 45%;
+                padding-bottom: 50%;
+                float: left;
+                margin-right: 0;
+            }
+        }
+        .aia-card-image + .card-padding {
+            @media (max-width: $phone) {
+                width: 55%;
+                float: left;
+                padding: 1em;
+            }
+        }
+    }
+}
+
+.square {
+    @extend .grid-1-4;
+    @extend .square-height;
+}
+
+.multi-card {
+    .headline {
+        padding: 1.25rem 1.25rem 0;
+        margin-bottom: 0;
+    }
+    .multi-card-divider {
+        display: block;
+        border: none;
+        border-top: 1px solid $aia-light-gray;
+        margin: 1.5em 0 -1em;
+    }
+    .card-padding:last-child {
+        .multi-card-divider {
+            display: none;
+        }
+    }
+    &:hover {
+        background: $white;
+    }
+}
+
+.multi-card-divider {
+    display: none;
+}
+
+.sidebar {
+    @media (max-width: $phablet) {
+        .aia-card {
+            width: 100%;
+        }
+    }
+}
+
+
+.aia-card {
+    .hidden {
+        position: absolute;
+        bottom: -180px;
+        left: 0;
+        right: 0;
+        height: 180px;
+        background-color: $white;
+        transition: all .2s ease-in-out;
+    }
+    .hidden + .aia-card-image {
+        transition: all .2s ease-in-out;
+    }
+    &:hover {
+        .hidden {
+            bottom: 0;
+        }
+        .hidden + .aia-card-image {
+            height: 13.125em;
+            transition: all .2s ease-in-out;
+            opacity: 1;
+        }
+    }
+}
+
+
+// Tile fade
+.aia-card .text-fade {
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    text-align: center; 
+    height: 3em;
+    border-bottom: .75em solid #fff;
+    margin: 0; 
+    padding: 0; 
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+
+
+
+
+// New Grid Test
+.aia-card {
+  .aia-card-image {
+    &.half {
+      height: 11.25em; /* temp important */
+    }
+  }
+}
+.card-height-1 {
+  height: 22.5em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        height: 22.4em; /* temp important */
+    }
+}
+.card-height-2 {
+  height: 46em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+        height: 45.8em; /* temp important */
+    }
+}
+.square-height {
+    height: 16.125em;
+}
+.square {
+    .aia-card-image {
+        height: 16.125em;
+    }
+}
+
+// END TEST
+
+
+
+

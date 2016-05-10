@@ -1,0 +1,15 @@
+.boolean-editor {
+    .toggle-switch {
+        background-color: $tools-color-A;
+        .slider-right {
+            background-color: $tools-active-color;
+            color: white;
+        }
+        &.disabled {
+            .slider-right {
+                background-color: $tools-color-E;
+                color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.image-card {
+    .image-card-placeholder {
+        width: 400px;
+        height: 400px;
+        border: 1px solid $aia-gray;
+        background-color: $aia-light-gray;
+    }
+    img + .caption {
+        margin: 0 0 2em;
+    }
+}
+
+.images-card  {
+    > div {
+        display: flex;
+        > div {
+            flex: 1;
+            position: relative;
+            margin: 0 5px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+    }
+    .caption {
+        margin: 0 0 2em;
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 0;
+            padding: 0 0.5em;
+        }
+    }
+}

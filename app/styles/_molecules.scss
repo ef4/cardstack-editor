@@ -1,0 +1,264 @@
+// MOLECULES
+
+.more-button-wrapper {
+  text-align: center;
+}
+
+.tag-list {
+  @extend .white-box;
+  margin: 1em 0;
+  li {
+    display: inline-block;
+    margin: 0 1em .5em 0;
+    line-height: inherit;
+    a {
+      line-height: 1.4em;
+    }
+  }
+}
+
+.action-buttons {
+  margin: 2em 0;
+}
+
+.courses {
+  list-style-type: none;
+  margin: 1em 0 0;
+  padding: 0;
+}
+
+.header-with-link {
+  overflow: hidden;
+  margin: 1em 0 0;
+  .major-title {
+    float: left;
+    margin-top: 0;
+    margin-bottom: .2em;
+  }
+  a {
+    float: right;
+    margin-top: 2em;
+    margin-left: 3em;
+    @extend .with-arrow;
+  }
+  @media (max-width: $phablet) {
+    margin-bottom: 1em;
+    .major-title, a {
+      float: none;
+      display: block;
+    }
+    .major-title {
+      margin-bottom: 0;
+    }
+    a {
+      margin: 1em 0 0;
+      margin-right: 3em;
+    }
+  }
+}
+
+.compact-list {
+  font-size: .8em;
+  line-height: 1.4em;
+}
+
+ul.event-info-block {
+  padding-left: 1.75em;
+  position: relative;
+  margin: 0;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  float: left;
+  &:before {
+    position: absolute;
+    left: 0em;
+    top: 0;
+    color: $aia-red;
+    width: 1.25em;
+    height: 1.25em;
+  }
+  li {
+    margin: 0;
+    text-indent: 0;
+    &:before {
+      content: none;
+    }
+  }
+  a {
+    @extend .textual-button;
+  }
+  &.date-time {
+    &:before {
+      content: url(/icons/AddCalendar.svg);
+    }
+  }
+  &.address {
+    &:before {
+      content: url(/icons/Location.svg);
+    }
+  }
+  @media (max-width: $phone) {
+    float: none;
+  }
+}
+
+.calendar {
+  border: 2px solid $text-gray;
+  width: 2.25em;
+  text-align: center;
+  color: $text-gray;
+  @extend .ArchitypeBold;
+  .month {
+    border-bottom: 2px solid $text-gray;
+    text-transform: uppercase;
+    font-size: .6em;
+    line-height: 1.4em;
+    padding-top: 1px;
+  }
+  .day {
+    padding-top: 3px;
+    line-height: 1em;
+  }
+}
+
+.tabs {
+  margin: 0 0 1em;
+  overflow: hidden;
+  @media (max-width: $tablet) {
+    .tab.filter-type, .tab {
+      margin-bottom: .5em;
+      margin-right: .5em;
+    }
+  }
+}
+
+.submit-button {
+  background-image: url(/icons/aia-carrot-white.svg);
+  background-repeat: no-repeat;
+  background-size: .6em;
+  background-position: 50%;
+  margin-left: 0;
+}
+
+.multi-line-lists {
+  @extend .white-box;
+  @extend .col-3;
+  padding: 2em;
+  li {
+    p {
+      margin: 0;
+      font-size: .8em;
+      &:first-child {
+        font-weight: 800;
+      }
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+.thumbnail-with-text {
+  @extend .grid-1-4;
+  overflow: hidden;
+  margin-bottom: 1em;
+  img {
+    float: left;
+    margin: 0 1em 0 0;
+    max-width: 4em;
+  }
+  p {
+    font-size: .8em;
+    margin: 0;
+  }
+}
+
+.name-title {
+  @extend .headline;
+  line-height: 1.2em;
+  span {
+    color: $aia-gray;
+  }
+}
+
+.slideshow-controls {
+  .slideshow-left,
+  .slideshow-right {
+    background-color: $black;
+    margin-left: 3px;
+    svg {
+      width: .5em;
+    }
+  }
+  .slideshow-left {
+    padding: .6em .5em .3em .7em;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  .slideshow-right {
+    padding: .6em .7em .3em;
+    margin-left: .5em;
+  }
+}
+
+.body-image {
+  @extend .grid-1-6;
+  &.left {
+    float: left;
+    margin-right: 2em;
+    margin-left: 0em;
+  }
+  &.right {
+    float: right;
+    margin-right: 0em;
+    margin-left: 2em;
+  }
+  img {
+    margin-bottom: .5em;
+  }
+}
+
+img {
+  + .caption {
+    margin: 3px 0 4.5em;
+  }
+}
+
+h1 + .major-title {
+  margin-top: -.2em;
+  color: $aia-gray;
+}
+
+h1 + div > .action-buttons {
+  margin-top: 1.5em;
+}
+
+.ad {
+  text-align: center;
+  margin: 3em 0 2em;
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+  @media (max-width: $phablet) {
+    display: none;
+  }
+}
+
+h1 + h2,
+article h1 + h2 {
+  margin: .5em 0;
+}
+
+h1 + h3 {
+  margin-top: 1.5em;
+}
+
+.intro-text {
+  margin: 0 0 3em;
+  h2 {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,10 @@
+.ce-progress {
+  @extend .white-box;
+  position: relative;
+
+  > div {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 1em;
+  }
+}

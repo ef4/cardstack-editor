@@ -1,0 +1,40 @@
+.filter-tabs {
+  position: relative;
+
+  .filter-type {
+    text-transform: capitalize;
+  }
+
+  form.checkbox {
+    /* top: -8px; */
+  }
+
+  /*
+  &.best-practice-chapters {
+    .filter-type {
+      padding: .75em;
+
+      @media (max-width: $tablet) {
+        font-size: .75em;
+      }
+    }
+  }
+  */
+}
+
+.tab-headers {
+  overflow: hidden;
+}
+
+.tabs {
+  .tab {
+    margin-bottom: 0;
+  }
+  .filter-type {
+    float: left;
+    &.active {
+      position: relative;
+      border-bottom: 1px solid $white;
+    }
+  }
+}

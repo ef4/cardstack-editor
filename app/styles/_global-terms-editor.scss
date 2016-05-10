@@ -1,0 +1,45 @@
+.global-terms-editor {
+    .ember-power-select-multiple-option {
+        font-size: 0.8em;
+    }
+}
+
+.global-terms-editor-dropdown {
+    width: 30em;
+
+    [aria-current=true] {
+        .parent-term {
+            color: $tools-color-E;
+        }
+        .own-term {
+            color: white;
+        }
+    }
+    .term-row {
+        display: flex;
+        align-items: baseline;
+    }
+    .parent-term {
+        color: $tools-color-D;
+        font-size: 0.8em;
+        min-width: 8em;
+    }
+    .own-term {
+        flex: 1;
+    }
+
+    .terms-nav {
+        background-color: white;
+        border-radius: 3px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        padding: 0 0.5em;
+        font-size: 0.8em;
+        color: $tools-color-D;
+        line-height: 1.75;
+        &:hover {
+            background-color: $tools-color-D;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,1193 @@
+// PAGES
+
+/* -------------------------------------------------------------------------------- */
+// Home
+
+.aia-card-section {
+  position: relative;
+  margin: auto;
+}
+
+#aia-cards-national, #aia-cards-community {
+  position: relative;
+  height: 110em;
+  @media (max-width: $tablet) {
+    height: 80em;
+  }
+  @media (max-width: $phablet) {
+    height: 210em;
+  }
+  @media (max-width: $phone) {
+    height: 200em;
+  }
+}
+
+// Masonry layout
+
+@media (max-width: $phone) {
+  .masonry-item {
+    width: 100%;
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// AIA Architects
+
+#aia-architects {
+  .tabs {
+    margin: 1em 0 2em;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// Legislative Action
+
+.issues-list {
+  p a {
+    color: $black;
+    &:hover {
+      color: $aia-red;
+    }
+  }
+}
+
+.issue-result {
+  .pubdate {
+    float: left;
+    @extend .ArchitypeBold;
+    font-size: .6em;
+    text-transform: uppercase;
+    color: $text-gray;
+    margin: -7px 20px 20px 0;
+  }
+
+  .title, .subtitle {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
+  .title {
+    color: $black;
+  }
+
+  .subtitle {
+    color: $aia-gray;
+  }
+
+  .description {
+    max-height: 80px;
+  }
+
+  .text-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      height: 3em;
+      border-bottom: .75em solid #fff;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  }
+}
+
+.main-content .take-action {
+  float: right;
+}
+
+/*
+#legislative-action-search {
+  margin-bottom: 4em;
+}
+*/
+
+/* -------------------------------------------------------------------------------- */
+// About
+
+.info-card {
+  @extend .white-box;
+  padding: 1em 2em;
+  margin: 0 0 1em;
+  position: relative;
+  .text {
+    max-width: 70%;
+  }
+  .icon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 4.3em;
+    max-width: none;
+    &.bottom-left {
+      top: inherit;
+      right: inherit;
+      left: 1em;
+      bottom: 0;
+    }
+  }
+}
+
+.about-card-1 {
+  @extend .info-card;
+  height: 10em;
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+.about-card-2 {
+  @extend .info-card;
+  height: 21em;
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+.about-card-3 {
+  @extend .info-card;
+  height: 12.5em;
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+.about-card-4 {
+  @extend .info-card;
+  height: 8em;
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+.about-map {
+  height: 21.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  & + .map-annotation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.5em;
+    margin-left: 2em;
+    color: $aia-red;
+    font-size: .7em;
+    font-weight: bold;
+    line-height: 1.2em;
+    width: 10em;
+  }
+}
+
+.find-chapter-map-canvas {
+  height: 21.5em;
+}
+
+.leadership-profiles {
+  margin: 2em 0;
+}
+
+.about-partners-text {
+  width: 50%;
+  float: left;
+  @media (max-width: $phablet) {
+    width: 100%;
+  }
+}
+
+.about-partner-logos {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  .partner-logo {
+    float: left;
+    height: 6em;
+    flex: 1;
+    display: flex;
+    text-align: center;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: auto;
+      max-with: 190px;
+      height: auto;
+      margin: 0;
+    }
+  }
+  @media (max-width: $phablet) {
+    width: 100%;
+    float: none;
+    .partner-logo {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.about-photo-card {
+  @extend .aia-card-2x1;
+  transform: none;
+  &:hover {
+    transform: none;
+    box-shadow: inherit;
+    background-size: cover !important;
+    background-position: 50% !important;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// Member Directory
+
+@media (max-width: $phone) {
+  .member-directory-title {
+    display: block;
+    margin-bottom: 0;
+  }
+  a.title-edit-link {
+    float: none;
+    margin-bottom: 1em;
+  }
+}
+
+.membership-intro {
+  @media (max-width: $phablet) and (min-width: $phone) {
+    margin: 0;
+  }
+}
+
+.member-directory-table {
+  width: 100%;
+  @extend .aia-table;
+  thead, tbody {
+    td:nth-child(1) {
+      width: 9,4%;
+    }
+    td:nth-child(2) {
+      width: 18%;
+    }
+    td:nth-child(3) {
+      width: 20%;
+    }
+    td:nth-child(4) {
+      width: 24%;
+    }
+    td:nth-child(5) {
+      width: 18%;
+    }
+    td:nth-child(6) {
+      width: 10%;
+    }
+    @media (max-width: $phablet) {
+      td {
+        width: 100%;
+      }
+    }
+  }
+  thead {
+    td {
+      vertical-align: bottom;
+      position: relative;
+    }
+  }
+  tbody {
+    tr {
+      @media (max-width: $phablet) {
+        margin-bottom: 2em;
+        overflow: hidden;
+      }
+    }
+    td {
+      padding-right: 1em;
+      font-size: .9em;
+      overflow: hidden;
+      @media (max-width: $phablet) {
+        width: 60% !important;
+      }
+      &:nth-child(1) {
+        padding: 0;
+        @media (max-width: $phablet) {
+          float: left;
+          width: 23% !important;
+          img {
+            margin: 0 0 1em !important;
+            padding-right: 0 !important;
+            float: left;
+            max-width: 100%;
+          }
+        }
+        @media (max-width: $phone) {
+          width: 116px !important;
+        }
+        img {
+          margin: .5em 0;
+          padding-right: 1em;
+          max-width: 100px;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width: $phablet) {
+          font-size: 1.15em;
+        }
+      }
+      &:nth-child(6) {
+        padding: 0;
+        text-align: center;
+        .icon:hover {
+          .st0 {
+            fill: $aia-red;
+          }
+        }
+        @media (max-width: $phablet) {
+          padding: 0 0 0 0;
+          text-align: left;
+          .icon {
+            margin-left: -3px;
+          }
+        }
+      }
+      img {
+        margin: 0;
+        display: block;
+        @media (max-width: $phablet) {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+  .icon {
+    width: 1.75em;
+    .st0 {
+      fill: $aia-gray;
+    }
+  }
+
+  // begin styling for dev-only "impersonate" links
+  td { position: relative; }
+  .impersonate {
+      cursor: pointer;
+      position: absolute;
+      display: initial;
+      right:0.8em;
+      bottom: 1em;
+  }
+  td:hover .impersonate {
+      display: initial;
+  }
+  // end styling for dev-only "impersonate" links
+
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Press
+
+.media-contacts {
+  @extend .white-box;
+  .contact {
+    margin-bottom: 2em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .contact p {
+    margin-bottom: 0;
+    font-size: 1.2em;
+  }
+  .phone-number {
+    color: $black;
+    &:hover {
+      color: $aia-red;
+    }
+  }
+}
+
+.search.press-search {
+  margin: 0 0 2em;;
+}
+
+/* -------------------------------------------------------------------------------- */
+// Showcase
+
+#showcase-page {
+  .page-title {
+    margin: 0 0 .5em;
+  }
+}
+
+.image-gallery {
+  margin: 1em 0 3em;
+
+  .showcase-image {
+    display: inline-block;
+    width: 7.5em;
+    float: left;
+    margin-bottom: 1em;
+    height: 5em;
+    overflow: hidden;
+    opacity: .5;
+    background-size: cover;
+    background-position: 50% 50%;
+    &.active {
+      opacity: 1;
+    }
+    &:nth-child(2n-1) {
+      margin-right: 1em;
+    }
+    @media (max-width: $tablet) and (min-width: $phablet) {
+      width: 5.75em;
+      height: 4em;
+    }
+    @media (max-width: $phablet) {
+      width: 7.95em;
+      margin-right: .5em;
+      &:nth-child(2n-1) {
+        margin-right: inherit;
+      }
+      &:nth-child(4n+4) {
+        margin-right: 0;
+      }
+      @media (max-width: $phone) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $phablet) {
+    .grid-1-4 {
+      width: 100%;
+    }
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Partners
+
+.partner-logo {
+    background-size: contain;
+    background-position: 50%;
+    width: 40%;
+    max-width: 250px;
+    height: 10em;
+    float: right;
+    background-repeat: no-repeat;
+    @media (max-width: $phablet) {
+      width: 40%;
+    }
+    @media (max-width: $phablet) {
+      width: 100%;
+      float: none;
+    }
+}
+
+.aia-partner {
+  padding: 1em;
+  margin: 1em 0;
+  background-color: $white;
+  overflow: hidden;
+  .text {
+    width: 50%;
+    float: left;
+    @media (max-width: $phablet) {
+      width: 55%;
+    }
+    @media (max-width: $phablet) {
+      width: 100%;
+      float: none;
+    }
+  }
+}
+
+.strategic-partner {
+  @extend .aia-partner;
+  border-top: 2px solid $aia-red;
+  cursor: pointer;
+}
+
+.program-partner {
+  @extend .grid-1-4;
+  background-color: $white;
+  padding: 1em;
+  margin-bottom: 1em;
+  height: 17.25em;
+  display: flex;
+  flex-direction: column;
+  .headline {
+    margin-bottom: .5em;
+  }
+  .partner-logo {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: $phone) {
+    height: auto;
+  }
+  .partner-logo {
+    margin: 0 auto;
+    float: none;
+    @media (max-width: $phone) {
+      margin: 0;
+      background-position: 0;
+      width: auto;
+      height: 100px;
+    }
+  }
+}
+
+.single-partner {
+  @extend .white-box;
+  .text {
+    float: left;
+    width: 70%;
+    padding-right: 4em;
+    @media (max-width: $phone) {
+      width: 100%;
+      float: none;
+    }
+  }
+  .partner-logo {
+    width: 25%;
+    background-position: 50% 0;
+    margin-top: 4em;
+    margin-right: 1em;
+    @media (max-width: $phablet) {
+      float: right;
+      width: 25%;
+      background-position: 50% 0;
+      margin-top: 4em;
+      margin-right: 1em;
+    }
+    @media (max-width: $phone) {
+      width: 100%;
+      float: none;
+      margin: 2em 0 0;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// Search
+
+#search-page {
+  form.search {
+    margin-top: 0;
+    margin-bottom: 3em;
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Best Practices
+
+.article-excerpt-info {
+  font-size: .8em;
+  margin-bottom: 2rem;
+}
+
+.search.wide.best-practices-search {
+  margin-top: 0;
+}
+
+.best-practice-chapters {
+  > div.ember-view {
+    
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Find A Chapter
+
+form.wide.chapter-search {
+  margin-bottom: 2em;
+}
+
+.chapter-card {
+  @extend .white-box;
+  @extend .grid-1-4;
+  height: 17em;
+  .headline {
+    font-size: 1.75em;
+    @media (max-width: $tablet) {
+      font-size: 1.4em;
+    }
+    @media (max-width: $phablet) {
+      font-size: 1.5em;
+    }
+  }
+  .chapter-contact {
+    font-size: .8em;
+    line-height: 1.2rem;
+  }
+  .textual-button {
+    margin: .5rem 0;
+  }
+  &.your-chapter {
+    height: 21.5em;
+    @media (max-width: $phablet) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+#domestic-chapters {
+  margin-bottom: 1em;
+}
+
+#international-chapters {
+  .row {
+    margin-bottom: 3em;
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Career Center
+
+.career-card-1 {
+  @extend .info-card;
+  height: 21em;
+  .text {
+    max-width: 80%;
+  }
+  @media (max-width: $phone) {
+    height: auto;
+  }
+}
+
+.career-card-2 {
+  @extend .info-card;
+  height: 43em;
+  @media (max-width: $phone) {
+    height: auto;
+  }
+  .text {
+    width: 50%;
+    float: left;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+      width: 47%;
+    }
+  }
+  .jobs {
+    float: left;
+    margin-top: 1em;
+    @media (max-width: $tablet) and (min-width: $phablet) {
+      margin-top: .5em;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border-bottom: 1px solid $aia-light-gray;
+        margin-bottom: 1.5rem;
+        padding-bottom: .25rem;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    .job-info {
+      font-size: .8em;
+      a {
+        color: $black;
+        &:hover {
+          color: $aia-red;
+        }
+      }
+    }
+  }
+  @media (max-width: 460px) {
+    .icon.bottom-left {
+      left: inherit;
+      bottom: inherit;
+      right: 1em;
+    }
+  }
+}
+
+.about-cards {
+  .aia-card-1x1,
+  .aia-card-2x1 {
+    cursor: inherit;
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+// AIA 404
+
+.links404 {
+  a {
+    display: inline;
+    margin-right: 2em;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// My Account
+
+.settings-box {
+  @extend .grid-1-4;
+  margin-bottom: 1em;
+  .white-box {
+    margin-bottom: 0;
+    height: 16em;
+  }
+  .large-button {
+    @extend .full-width;
+    position: bottom;
+  }
+}
+
+.account-details {
+  .name-title {
+    margin-bottom: 1em;
+  }
+
+  .row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    &.member-emails strong {
+      margin-left: .5em;
+    }
+  }
+}
+
+.profile-image + .textual-button {
+  margin-top: 0;
+}
+
+.profile-icons {
+  margin-left: -.7em;
+}
+
+.primary:after {
+  content: "P";
+  font-weight: bold;
+  color: $white;
+  background-color: $aia-red;
+  margin-left: .5em;
+  font-size: .6em;
+  padding: 0 .3em 0 .25em;
+  position: relative;
+  top: -3px;
+}
+
+.oauth-button {
+  padding: .75em 1em .5em;
+  margin-bottom: 1em;
+  overflow: hidden;
+  color: $white;
+  width: 100%;
+  display: block;
+  p {
+    margin: 0;
+    line-height: 1.5em;
+    float: left;
+  }
+  .icon {
+    float: right;
+    width: 1.2em;
+    g, .st0 {
+      fill: $white;
+    }
+  }
+}
+
+.oauth-facebook {
+  @extend .oauth-button;
+  background-color: #3b5998;
+}
+
+.oauth-linkedin {
+  @extend .oauth-button;
+  background-color: #0077b5;
+}
+
+.janrain-capture-ui .capture_error .capture_tip_error {
+    margin-top: -16px;
+    color: $aia-red;
+}
+
+.janrain-capture-ui {
+  font-size: 1em;
+}
+
+#janrainModal {
+  width: 320px !important;
+}
+
+#janrainModal .janrain_modal_closebutton {
+  top: -3px;
+  right: 2px;
+}
+
+#janrainModal .janrain-capture-ui.capture-ui-content.capture_screen_container p {
+    margin: 1em 0;
+}
+
+#janrainModal .account-modal form input[type=submit], 
+#janrainModal .janrain-capture-ui.capture-ui-content.capture_screen_container form input[type=submit] {
+  margin: 1em 0;
+}
+
+.my-account-education {
+  .white-box .headline {
+    float: left;
+    width: 200px;
+  }
+
+  .aia-table {
+    .title {
+      width: 350px;
+    }
+  }
+}
+
+.aia-table {
+  table tbody td:first-child p.date {
+    margin-top: 0;
+  }
+}
+
+// Education buttons
+.mobile-1-1 {
+  .full-width {
+    @media (max-width: $phablet) and (min-width: $phone) {
+      width: 48.5%;
+      float: left;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.bookmarks-table {
+  thead, tbody {
+    tr td:nth-child(1) {
+      width: 15%;
+      @media (max-width: $tablet) and (min-width: $phablet) {
+        width: 17%;
+      }
+    }
+    tr td:nth-child(2) {
+      width: 60%;
+      @media (max-width: $tablet) and (min-width: $phablet) {
+        width: 55%;
+        padding-right: 1em;
+      }
+    }
+    tr td:nth-child(3) {
+      width: 15%;
+      @media (max-width: $tablet) and (min-width: $phablet) {
+        width: 17%;
+      }
+    }
+    @media (max-width: $phablet) {
+      tr td {
+        width: 100% !important;
+      }
+    }
+  }
+  tbody {
+    tr td {
+      &:first-child p.date {
+        margin-top: 1em;
+        @media (max-width: $phablet) {
+          margin-top: 0;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width: $tablet) and (min-width: $phablet) {
+          max-width: 18em;
+          white-space: normal;
+        }
+        @media (max-width: $phablet) {
+          font-size: 1.2em;
+          margin-bottom: 0;
+        }
+      }
+      &:last-child {
+        text-align: right;
+        @media (max-width: $phablet) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+
+// Card Editing
+
+#profile-edit-1 {
+  .editing-mode {
+    .editing-field + p,
+    .editing-fields + p {
+      margin-top: 3em;
+    }
+  }
+
+  .editing-field {
+    margin-bottom: 1em;
+    overflow: hidden;
+    .standard-label {
+      margin: 1em 0 0;
+      line-height: 1em;
+      color: $aia-gray;
+      &.edit-social {
+        float: left;
+        margin: 4px 0;
+        padding: .75em 0;
+        width: 4em;
+        height: 37px;
+        border: 1px solid lighten($aia-gray, 33%);
+        border-right: none;
+        text-align: center;
+        .twitter-icon {
+          height: 18px;
+        }
+      }
+    }
+    input.edit-social {
+      float: left;
+      width: 80%;
+    }
+    input {
+      margin-top: .3em;
+      background-color: $aia-bg-gray;
+      border: 1px solid lighten($aia-gray, 33%);
+      padding: .75em .75em .5em;
+      width: 100%;
+      font-size: .8em;
+      float: left;
+      &:focus {
+        border-color: $aia-red;
+        outline: none;
+      }
+    }
+    img {
+      margin-bottom: 0;
+    }
+  }
+
+  .editing-fields {
+    .editing-field {
+      display: inline-block;
+    }
+    &.city-state-zip {
+      .editing-field {
+        &:nth-child(1) {
+          width: 40%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 36%;
+        }
+      }
+    }
+    &.d-o-b {
+      .editing-field {
+        &:nth-child(1) {
+          width: 45%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 31%;
+        }
+      }
+    }
+    &.heading {
+      .editing-field {
+        &:nth-child(1) {
+          width: 50%;
+        }
+        &:nth-child(2) {
+          width: 49.25%;
+        }
+        &:nth-child(3) {
+          width: 100%;
+        }
+        &:nth-child(4) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#profile-edit-2 {
+  background-color: $aia-gray;
+  .editing-mode {
+    .major-title {
+      color: $white;
+    }
+    .white-box {
+      box-shadow: 0px 0px 10px $black;
+    }
+    .header-with-link a {
+      color: $white;
+      @extened .with-arrow-white;
+    }
+    .editing-field + p,
+    .editing-fields + p {
+      margin-top: 3em;
+    }
+  }
+
+  .editing-field {
+    margin-bottom: 1em;
+    .standard-label {
+      margin: 1em 0 0;
+      line-height: 1em;
+      color: $aia-gray;
+    }
+    input {
+      margin-top: .3em;
+      background-color: $aia-bg-gray;
+      border: 1px solid lighten($aia-gray, 33%);
+      padding: .75em .75em .5em;
+      width: 100%;
+      font-size: .8em;
+      &:focus {
+        border-color: $aia-red;
+        outline: none;
+      }
+    }
+  }
+
+  .editing-fields {
+    .editing-field {
+      display: inline-block;
+
+    }
+    &.city-state-zip {
+      .editing-field {
+        &:nth-child(1) {
+          width: 40%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 36%;
+        }
+      }
+    }
+    &.d-o-b {
+      .editing-field {
+        &:nth-child(1) {
+          width: 45%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 31%;
+        }
+      }
+    }
+    &.heading {
+      .editing-field {
+        &:nth-child(1) {
+          width: 50%;
+        }
+        &:nth-child(2) {
+          width: 49.25%;
+        }
+        &:nth-child(3) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Programs Awards
+
+.awards-list {
+  @extend .white-box;
+  p {
+    margin-bottom: .5em;
+  }
+  ul {
+    padding: 0;
+    margin: 0 0 1.5em;
+    div {
+      > p {
+        margin: 0;
+        line-height: 1.5em;
+        display: inline-block;
+      }
+    }
+    li {
+      /* padding-left: 1em; */
+      line-height: 1.5em;
+      display: inline-block;
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// History
+
+.timeline {
+  margin-bottom: 3em;
+}
+
+/* -------------------------------------------------------------------------------- */
+// Help
+
+.contact-us {
+  .compact-list {
+    margin-bottom: 1.5em !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.search.help {
+  margin-top: 0;
+}
+
+/* -------------------------------------------------------------------------------- */
+// Tools
+
+.optional-tools-links {
+  text-align: center;
+  a {
+    display: inline-block;
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+// 404
+
+form.search.wide.search404 {
+  margin-bottom: 1em;
+}

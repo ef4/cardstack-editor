@@ -1,0 +1,1117 @@
+// Sidebar Variables
+
+$tools-active-color: #63A9FA;
+
+$tools-color-A: #292A2C;
+$tools-color-B: #404040;
+$tools-color-C: #545454;
+$tools-color-D: #737373;
+$tools-color-E: #F2F2F2;
+$tools-color-F: #b4b4b4;
+$tools-text: $tools-color-A;
+$tools-text-fade: transparentize($tools-text, .7);
+$tools-tab-hover: $tools-color-B;
+
+$e-width: 12px;
+
+$tools-transition: 250ms ease;
+$tools-margin: 3em;
+$topbar-height: 2.625em;
+
+$ember-power-select-highlighted-color: inherit;
+$ember-power-select-highlighted-background: $tools-active-color;
+@import "ember-power-select";
+
+/* -------------------------------------------------------------------------------- */
+// Accounts Icon Animation
+
+#accounts-icon {
+    opacity: 1;
+    cursor: pointer;
+    width: 18px;
+    hight: 15px;
+    #cross1 {
+        transform: translate(0px, 0px) rotate(0deg);
+        transition: all .2s linear;
+    }
+    #cross2 {
+        transform: translate(0px, 8px) rotate(-90deg);
+        transition: all .2s linear;
+    }
+    #line1, #line2, #line3 {
+        transform: translate(0px, 0px);
+        transition: all .2s ease-in;
+    }
+    &:hover,
+    &.open {
+        #line1, #line2, #line3 {
+            transform: translate(20px, 0px);
+            transition: all .2s ease-in;
+        }
+        #cross1 {
+            transform: translate(8.3px, -3.8px) rotate(45deg) scale(2,2);
+            transition: all .2s linear;
+        }
+        #cross2 {
+            transform: translate(-2.5px, 7.5px) rotate(-45deg) scale(2,2);
+            transition: all .2s linear;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+@import "toggle-switch";
+@import "content-edit";
+@import "editor-toolbar.scss";
+@import "editor-overlays";
+@import "boolean-editor";
+@import "choose-terms";
+@import "choose-terms-inline";
+@import "number-editor";
+@import "mobiledoc-overview";
+@import "publication-control";
+@import "cards-preview";
+@import "aia-mobiledoc-editor";
+@import "field-editor-image";
+@import "field-editor-tablist";
+@import "star-rating";
+@import "global-terms-editor";
+@import "editorial-control";
+@import "content-browser";
+@import "simple-browser";
+@import "modal";
+@import "unsaved-changes-warning";
+@import "image-upload-modal";
+
+.tools-sidebar,
+.tools-topbar {
+    font-family: 'Avenir', 'helvetica', sans-serif;
+    z-index: 2;
+}
+
+.tools-btn {
+    background-color: $tools-color-E;
+    border: 1px solid #cacaca;
+    color: $tools-color-D;
+    padding: .5em 2.5em;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: normal;
+    font-family: inherit;
+    font-size: 12px;
+    &.right {
+        float: right;
+    }
+    &.small {
+      padding: .7em 1.25em;
+    }
+    &:hover {
+        border-color: $tools-text;
+        color: $tools-text;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        background-color: darken($tools-color-E, 5%)
+    }
+    &.inactive {
+        opacity: .5;
+        &:hover {
+            border-color: #cacaca;
+            color: $tools-color-D;
+        }
+    }
+}
+
+.right {
+    float: right;
+}
+
+/* -------------------------------------------------------------------------------- */
+// Page Level Styling
+
+.page-wrapper {
+    transform-origin: 0 0;
+    background: #efefef;
+    opacity: 0;
+    z-index: -1;
+    &.foreground {
+        opacity: 1;
+        z-index: 0;
+    }
+    transition: opacity $tools-transition, transform $tools-transition;
+}
+
+.cards-preview-container {
+    width: 75%;
+    position: absolute;
+    top: 0;
+    left: 2em;
+    opacity: 0;
+    padding-top: 23em;
+    z-index: -1;
+    &.foreground {
+        opacity: 1;
+        z-index: 0;
+    }
+    transition: opacity $tools-transition;
+    .card-preview {
+      float: left;
+      &:after {
+        content: ' ';
+        display: block;
+        clear: both;
+      }
+      &.hero {
+        position: absolute;
+        top: 0;
+        left: .5em;
+        padding: 0;
+        height: 20em;
+        .hero {
+          height: 20em;
+        }
+        .tile-size-label {
+          margin-left: 0;
+        }
+      }
+      .tile-size-label {
+        font-size: .8em;
+        margin-left: .5em;
+        color: #aaaaaa;
+      }
+      .hero-unavailable {
+        height: 20em;
+        padding-top: 9em;
+        border: 1px dashed #333;
+        color: white;
+        text-align: center;
+      }
+    }
+}
+
+$main-nav-height: 3.1em;
+$header-height: 3.7em;
+
+@media (max-width: $tablet) {
+    $header-height: 60px;
+}
+
+@keyframes header-stay-absolute {
+    0% {
+        position: absolute;
+        top: -1 * ($main-nav-height + $header-height)
+    }
+    100% {
+        position: absolute;
+        top: -1 * ($main-nav-height + $header-height)
+    }
+}
+
+&.tools-not-activated {
+    #main-nav {
+        animation-name: none;
+    }
+    #header {
+        animation-name: none;
+    }
+}
+#header {
+    animation-duration: 250ms;
+    animation-name: header-stay-absolute;
+}
+
+@keyframes nav-stay-absolute {
+    0% {
+        position: absolute;
+        top: -1 * $main-nav-height;
+    }
+    100% {
+        position: absolute;
+        top: -1 * $main-nav-height;
+    }
+}
+#main-nav {
+    animation-duration: 250ms;
+    animation-name: nav-stay-absolute;
+}
+
+
+.page-wrapper.shrunk {
+    #header {
+        position: absolute;
+        top: -1 * ($main-nav-height + $header-height);
+        animation-name: none;
+        @media (max-width: $phablet) {
+            top: -59px; /* old 16px */
+        }
+    }
+    #main-nav {
+        position: absolute;
+        top: -1 * $main-nav-height;
+        animation-name: none;
+        &.open-face-hamburger {
+            min-height: 840px;
+        }
+    }
+    .hero {
+        top: 0;
+    }
+}
+
+@mixin apply-dimensions($toolbar_width) {
+    $scale-factor: (100% - $toolbar_width) / 100%;
+    .page-wrapper.shrunk {
+        transform: translateY($scale-factor*($topbar-height + $tools-margin)) translateX($tools-margin) scale($scale-factor);
+    }
+    .tools-sidebar {
+        width: calc(#{$toolbar_width} - #{2 * $tools-margin});
+    }
+    .under-sidebar {
+        width: calc(#{$toolbar_width} - #{2 * $tools-margin});
+    }
+    .tools-toggle {
+        width: calc(#{$toolbar_width} - #{2 * $tools-margin});
+        &.shrunk {
+            transform: translateY($topbar-height);
+        }
+    }
+}
+@include apply-dimensions($toolbar_width: 50%);
+@media (min-width: 1000px) {
+    @include apply-dimensions($toolbar_width: 43.0%);
+}
+@media (min-width: 1250px) {
+    @include apply-dimensions($toolbar_width: 34.0%);
+}
+@media (min-width: 1563px) {
+    @include apply-dimensions($toolbar_width: 26.0%);
+}
+@media (min-width: 1923px) {
+    @include apply-dimensions($toolbar_width: 20.1%);
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Top Bar
+
+.tools-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $topbar-height;
+    color: $white;
+    background-color: $black;
+    transform: translateY(-100%);
+    &.active {
+        transform: translateY(0);
+    }
+    transition: transform $tools-transition;
+    .liquid-container, .liquid-child {
+        height: 100%;
+    }
+    .liquid-child {
+        display: flex;
+
+    }
+    section {
+        background-color: $tools-color-A;
+        line-height: $topbar-height - 0.3em;
+        margin-right: 1px;
+        padding: 0.3em 0.5em 0 0.5em;
+        min-width: 2em;
+        text-align: center;
+        &.toggleable {
+            color: $tools-color-D;
+            cursor: pointer;
+            padding: .4em 1.3em 0;
+            @media (max-width: 1100px) {
+                padding-right: .35em;
+                label {
+                    display: none;
+                }
+            }
+            label {
+                cursor: pointer;
+                margin-left: 1em;
+            }
+            svg {
+                margin-top: 3px;
+                float: left;
+                opacity: .4;
+            }
+            &:hover {
+                background-color: $tools-tab-hover;
+                label {
+                    color: white;
+                    opacity: .6;
+                }
+                svg {
+                    opacity: .6;
+                }
+            }
+        }
+        &.active,
+        &.active:hover {
+            color: white;
+            background-color: $tools-color-C;
+            label {
+                opacity: 1;
+            }
+            svg {
+                opacity: 1;
+            }
+        }
+        label {
+            font-size: 12px;
+            font-weight: 100;
+            float: left;
+            margin: -.15em .5em 0;
+        }
+        &.tools-account {
+            /* padding: 12px 15px 8px; */
+            cursor: pointer;
+            &:hover {
+                background-color: $tools-tab-hover;
+            }
+        }
+        &.editor-toggle {
+            padding: .2em 1em 0 .5em;
+            min-width: 104px;
+            label {
+                margin: .15em 1em 0 .5em;
+            }
+        }
+        &.view-type {
+            padding-left: 1.2em;
+        }
+        &.viewport {
+            padding: .4em .7em 0;
+            width: 2em;
+            svg {
+                float: none;
+                &.size-desktop {
+                    margin-top: 4px;
+                }
+            }
+        }
+        &.autosave {
+            padding-left: .2em;
+            padding-right: .2em;
+            margin-right: 0;
+            svg {
+                margin: 0.4em 1em 0 .4em;
+                opacity: .4;
+            }
+        }
+    }
+    .spacer {
+        flex: 1;
+    }
+    .under-sidebar {
+        box-sizing: border-box;
+    }
+
+    .tile-preview-back {
+        position: absolute;
+        line-height: 1.5em;
+        margin-top: 0.5em;
+        margin-right: 0.3em;
+        padding: .4em 1.4em .4em 1em;
+        border: none;
+        border-radius: 4px;
+        background-color: $tools-color-A;
+        color: white;
+        font-size: .8em;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            background-color: $tools-color-B;
+        }
+    }
+}
+
+.tools-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: transform $tools-transition;
+    transform: translateX(100%);
+    &.shrunk {
+        button {
+            left: -2.1em;
+        }
+    }
+    z-index: 11;
+
+    button {
+        position: relative;
+        left: -2em;
+        width: 2em;
+        height: 2em;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        &:focus {
+            outline: none;
+        }
+        svg {
+            width: 2em;
+            height: 2em;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------------- */
+// Sidebar
+
+.tools-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 100%;
+    transform: translateX(0);
+
+    height: 100vh;
+    background-color: $tools-color-A;
+    color: white;
+    border-left: 1px solid $tools-color-A;
+    /* box-shadow: 0px 0px 20px #444; */
+    transition: transform $tools-transition;
+
+    cursor: pointer;
+    p {
+        font-size: 12px;
+        margin: .5em 0 0;
+    }
+    label {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .image-caption {
+      padding-bottom: 2em;
+    }
+    .btn-link {
+        text-decoration: underline;
+        font-size: 12px;
+        color: $tools-text;
+        margin-bottom: 1.5em;
+        display: block;
+    }
+
+    .tools-sidebar-bind {
+        flex: 1;
+    }
+
+    .sidebar-top {
+        height: $topbar-height;
+        border-left: 1px solid $black;
+        button {
+            float: right;
+            line-height: 1.5em;
+            margin-top: 0.5em;
+            margin-right: 0.3em;
+            padding: .4em 1.4em .4em;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+            font-size: .8em;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background-color: $tools-color-E;
+            }
+        }
+    }
+
+    .sidebar-top + div  {
+        flex: 1;
+        position: relative;
+    }
+
+    .ember-power-select-dropdown {
+        color: $tools-color-A !important;
+        border-top: 1px solid #aaaaaa;
+    }
+
+    input {
+        border-width: 2px;
+    }
+    input:focus {
+        border: 2px solid $tools-active-color;
+        outline: none;
+    }
+    input[type="text"] {
+        width: 94%;
+        padding: .5em 1em;
+        line-height: 1.9em;
+      &.reference-url-field {
+        width: 80%;
+      }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display:none;
+    }
+    input[type="radio"] + span,
+    input[type="checkbox"] + span {
+        display:inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: -.2em 1em 0 0;
+        vertical-align:middle;
+        cursor:pointer;
+        border: 1px solid $tools-text-fade;
+        background-color: transparent;
+    }
+    input[type="checkbox"] + span {
+        border-radius: 3px;
+    }
+    input[type="radio"]:checked + span,
+    input[type="checkbox"]:checked + span {
+        background-color:$tools-text;
+        border: 1px solid $tools-text-fade;
+    }
+    input[type="radio"]:checked + span {
+        background-color:$tools-text;
+        border: 2px solid $white;
+        box-shadow: 0 0 1px 0 $tools-text;
+        width: 8px;
+        height: 8px;
+    }
+    input[type="radio"] + span,
+    input[type="radio"]:checked + span,
+    input[type="checkbox"] + span,
+    input[type="checkbox"]:checked + span {
+        transition:background-color 0.1s linear;
+    }
+    input[type=""]
+    .btn {
+        background-color: $tools-color-E;
+        border: 1px solid #cacaca;
+        color: $tools-color-D;
+        padding: .5em 2.5em;
+        border-radius: 3px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: inherit;
+        font-weight: normal;
+        font-family: inherit;
+        font-size: 12px;
+        &.right {
+            float: right;
+        }
+        &:hover {
+            border-color: $tools-text;
+            color: $tools-text;
+        }
+    }
+    &.active {
+        transform: translateX(-100%);
+        cursor: initial;
+    }
+    .tools-sidebar-bind {
+        > .liquid-child {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        position: absolute; // needed for percentage sizing inside flex parent
+        height: 100%;
+        width: 100%;
+    }
+    .tool-tabs {
+        overflow: hidden;
+        display: inline-block;
+        .tool-tab {
+            float: left;
+            padding: .6em .5em;
+            width: 1.5em;
+            height: 22px;
+            text-align: center;
+            border-bottom: 1px solid $black;
+            border-right: 1px solid $black;
+            &.active {
+                background-color: $tools-color-C;
+                border-color: $tools-color-C;
+                border-right: 1px solid $black;
+                &:hover {
+                    background-color: $tools-color-C;
+                }
+            }
+            &:hover {
+                background-color: $tools-tab-hover;
+                cursor: pointer;
+            }
+        }
+    }
+    section {
+        margin: 0;
+        &.with-padding {
+            padding: $e-width;
+        }
+        &.dark {
+            header {
+                background-color: $tools-color-B;
+                &:hover {
+                    background-color: $tools-color-C;
+                }
+                color: $black;
+                font-weight: bold;
+                border-top: 1px solid $black;
+                button svg g {
+                    fill: $black;
+                }
+            }
+        }
+
+        header {
+            user-select: none;
+            margin: 0px;
+            padding: .75em .75em .5em;
+            background-color: $tools-color-D;
+            border-top: 1px solid $tools-color-A;
+            overflow: hidden;
+            cursor: pointer;
+            label {
+                float: left;
+                cursor: pointer;
+                font-size: .75em;
+            }
+            button {
+                height: 16px;
+                width: 16px;
+                margin-left: 1em;
+                margin-top: 2px;
+                border-radius: 2px;
+                background-color: $tools-color-A;
+                float: right;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                svg {
+                    width: 8px;
+                    height: 10px;
+                    g {
+                        fill: #ccc;;
+                    }
+                    transition: transform 250ms ease;
+                }
+                &.closed {
+                    svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            p {
+                float: right;
+                margin: 0;
+                font-size: 12px;
+                opacity: .5;
+            }
+
+        }
+        .e-content, .collapsible-section-if > .liquid-child {
+            padding: $e-width;
+            margin: 0;
+            background-color: white;
+            color: $tools-text;
+            .ember-power-select-trigger {
+                padding: 4px 16px 2px 8px;
+                border-radius: 0;
+                border-color: $tools-text-fade;
+            }
+            .ember-power-select-status-icon {
+                right: 16px;
+            }
+        }
+        .field {
+            margin-bottom: 12px;
+            label {
+                font-weight: 100;
+                font-size: 12px;
+                margin-bottom: .25em;
+            }
+            span.default {
+                opacity: .5;
+            }
+        }
+        .field:last-child {
+            margin-bottom: 0;
+        }
+        footer {
+            border-top: 1px solid $tools-text-fade;
+            background-color: white;
+            padding: $e-width $e-width 0 $e-width;
+            overflow: hidden;
+            margin: 12px -12px 0;
+            a {
+                color: $tools-text-fade;
+                text-decoration: underline;
+            }
+            .text-button {
+                margin-top: .4em;
+                display: inline-block;
+                font-size: .75em;
+                cursor: pointer;
+                &:hover {
+                    color: $tools-text;
+                }
+            }
+        }
+    }
+}
+
+#tools-header {
+    height: 2em;
+}
+
+#e-body {
+    button {
+        width: 100%;
+        padding: .75em 1em;
+        margin-bottom: .5em;
+        background-color: #fff;
+        color: $tools-text-fade;
+        border: 1px solid $tools-text-fade;
+        border-radius: 6px;
+        text-align: left;
+        font-size: 1em;
+        cursor: pointer;
+        &:hover {
+            color: $white;
+            border-color: $tools-active-color;
+            background-color: $tools-active-color;
+        }
+        &.active {
+            border: 1px solid red;
+        }
+    }
+}
+
+.content-info {
+    padding: $e-width $e-width 10px;
+    background-color: $tools-color-C;
+    svg {
+        float: left;
+        margin-right: 1em;
+    }
+    .content-type {
+        font-size: 10px;
+        line-height: 11px;
+        letter-spacing: .05em;
+        opacity: .6;
+        text-transform: uppercase;
+        margin: 0 0 2px;
+        font-weight: 100;
+    }
+    .content-title {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
+.sidebar-overview-section {
+    padding: $e-width $e-width 10px;
+    background-color: $tools-color-C;
+    .top-line {
+        overflow: hidden;
+        margin-bottom: 1em;
+        p {
+            display: inline;
+        }
+        a {
+            float: right;
+            font-size: 12px;
+            color: $white;
+        }
+    }
+    .sidebar-search {
+        overflow: hidden;
+        margin-bottom: 1em;
+        input[type="text"] {
+            width: 61%;
+            float: left;
+            padding: .35em 1em;
+            border: 1px solid #bbbbbb;
+        }
+        input[type="submit"] {
+            @extend .tools-btn;
+            float: right;
+            width: 28%;
+            padding: .5em !important;
+        }
+    }
+}
+
+// Media Gallery
+
+.media-gallery-top {
+    @extend .sidebar-overview-section;
+}
+
+
+// Library Tab
+
+.tools-library {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .simple-browser {
+        flex: 1;
+    }
+}
+
+.library-top {
+    @extend .sidebar-overview-section;
+}
+
+// Page Editing Tools
+
+input[type="datetime-local"] {
+    border-radius: 3px;
+    border: 2px solid $tools-color-E;
+}
+
+::-webkit-datetime-edit {
+    padding: 1em;
+}
+::-webkit-datetime-edit-fields-wrapper {
+    @extend .AvenirRegular;
+}
+::-webkit-datetime-edit-text {
+    padding: 0 0.3em;
+}
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field {
+    color: $tools-text;
+}
+
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator {
+    padding: 0 1.5em 0 1em;
+    &:hover {
+        background: transparent;
+    }
+}
+
+.attachment-note {
+  padding-bottom: 1em;
+  font-size: .75em;
+  a {
+    color: $aia-red;
+  }
+}
+
+.tilelist-editor {
+  font-size: .75em;
+
+  &.error .reference-url-field {
+    background-color: rgba($aia-red, .25);
+    border: 1px solid $aia-red;
+    color: $aia-red;
+  }
+  .new-card {
+    margin: 1em 0;
+    display: flex;
+  }
+  .card-overview {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    background-color: #e4e4e4;
+    border-radius: 4px;
+    padding: 0 4px;
+    margin-bottom: .5em;
+
+    .tile-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .type {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    .tile {
+      text-overflow: elipsis;
+    }
+    button {
+      background: none;
+      font-size: 1.25em;
+      color: gray;
+      border: none;
+      padding: 0 .25em .25em;
+      margin: 0;
+      cursor: pointer;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Accounts Dropdown
+
+#accounts-dropdown {
+    width: 220px;
+    background-color: $white;
+    @extend .AvenirRegular;
+    .your-info {
+        text-align: center;
+        padding: 1em 1em 0;
+        .your-photo {
+            background-size: cover;
+            border-radius: 50%;
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 1em;
+        }
+        p:first-of-type {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 .25em;
+        }
+        p:last-of-type {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+    .account-options-list {
+        text-align: left;
+        margin: 1.5em 0 1em;
+        display: block;
+    }
+    .account-options {
+        border-top: 1px solid #ececec;
+        padding: .75em .5em 1.25em;
+        display: block;
+        color: $tools-text;
+        font-size: 12px;
+        overflow: hidden;
+        svg {
+            margin-right: 1em;
+            position: relative;
+            top: 6px;
+        }
+        span {
+            display: inline-block;
+            transition: all .1s ease-in;
+        }
+        &:hover {
+            span {
+                transform: translateX(5px);
+                transition: all .1s ease-in;
+            }
+        }
+        &.logout {
+            text-align: right;
+            span {
+                svg {
+                    margin: 0 0 0 1em;
+                }
+            }
+        }
+    }
+}
+
+
+// Create Content Tab
+
+.tools-sidebar {
+    .create-content {
+        margin-top: -1px;
+        background-color: $white;
+        color: $tools-text;
+        header {
+            padding: $e-width $e-width 10px;
+            background-color: $tools-color-C;
+            font-size: 12px;
+            color: $white;
+        }
+        ul {
+            list-style-type: none;
+            line-height: 2em;
+            overflow: hidden;
+            padding: .25em 1em;
+            margin: 0;
+            li {
+                overflow: hidden;
+                margin: 1em 0;
+                color: #7d7d7d;
+                font-size: 12px;
+                font-weight: 100;
+                cursor: pointer;
+                button {
+                    padding: .5em 1em;
+                    font-size: 12px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+// Empty States
+
+.hero.empty-state {
+    border: 2px solid $tools-active-color;
+    background-color: mix($tools-active-color, $aia-bg-gray, 20%);
+    max-height: 10em;
+    cursor: pointer;
+    position: relative;
+    &:before {
+        content: "Primary Image";
+        color: $tools-active-color;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+    }
+}
+
+main.empty-state .main-content article {
+
+    [data-cms] {
+        color: $tools-active-color;
+        cursor: pointer;
+        &:hover {
+            color: darken($tools-active-color, 10%);
+        }
+    }
+
+}

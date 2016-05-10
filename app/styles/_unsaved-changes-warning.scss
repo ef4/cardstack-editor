@@ -1,0 +1,23 @@
+.unsaved-changes-warning {
+    padding: 1em 4em;
+    .button-row {
+        display: flex;
+        justify-content: space-around;
+    }
+    button {
+        line-height: 1.5em;
+        margin-top: 0.5em;
+        margin-right: 0.3em;
+        padding: .4em 1.4em .4em;
+        border: none;
+        border-radius: 4px;
+        background-color: white;
+        font-size: .8em;
+        cursor: pointer;
+        color: white;
+        background-color: $tools-color-B;
+        &.recommended {
+            background-color: $tools-active-color;
+        }
+    }
+}

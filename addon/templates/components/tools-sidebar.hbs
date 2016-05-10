@@ -1,0 +1,25 @@
+<div class="sidebar-top">
+  <div class="tool-tabs">
+    {{#each tabs as |tab|}}
+      <div class="tool-tab {{if (eq tools.tab tab.name) "active" }}"
+           onclick={{action tools.switchToTab tab.name}} >
+       {{cms-icon tab.icon}}
+      </div>
+    {{/each}}
+  </div>
+  <button onclick={{action tools.switchToTab "create"}}>Create New +</button>
+</div>
+
+
+{{#liquid-bind (hash active=active
+                     tab=tools.tab)
+               enableGrowth=false
+               class="tools-sidebar-bind"
+               as |state|}}
+  {{#if state.active}}
+     {{component (concat "tools-" state.tab) returnToHome=returnToHome tools=tools}}
+  {{/if}}
+{{/liquid-bind}}
+
+
+<div id="tools-sidebar-wormhole-target"></div>

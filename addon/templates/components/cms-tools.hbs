@@ -1,0 +1,25 @@
+<div class="page-wrapper {{if tools.active 'shrunk' }} {{if (eq tools.previewMode 'page') 'foreground'}} {{if tools.hasNotBeenActive 'tools-not-activated'}}">
+  {{yield}}
+</div>
+
+{{#if tools.available}}
+  <div class="cards-preview-container {{if (eq previewMode 'tile') 'foreground'}}">
+    {{show-sidebar name="cards-preview"}}
+  </div>
+
+  <div class="tools-toggle {{if tools.active 'shrunk' }}">
+    <button {{action (action tools.toggle) }}>
+      {{cms-icon "cardstack-editor"}}
+    </button>
+  </div>
+
+  {{#if tools.active}}
+    {{editor-overlays}}
+  {{/if}}
+  {{tools-topbar returnToHome=returnToHome tools=tools}}
+  {{tools-sidebar active=tools.active returnToHome=returnToHome tools=tools}}
+{{/if}}
+
+{{modal-target}}
+
+{{show-sidebar name="paragraph-tools"}}
