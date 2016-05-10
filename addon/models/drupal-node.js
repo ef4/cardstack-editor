@@ -18,6 +18,7 @@ export default Model.extend(RelationshipTracker, {
   published: attr('boolean'),
   deleted: attr('boolean'),
   publicationDate: attr('local-iso-8601'),
+  contentType: attr('string'),
 
   prioritization: attr('prioritization', { editorial: true, editorialSortOrder: 10 }),
   featured: attr('boolean',              { editorial: true, editorialSortOrder: 20 }),
