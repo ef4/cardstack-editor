@@ -1,0 +1,9 @@
+<div class="boolean-editor">
+  {{#toggle-switch enabled=enabled
+                   value=(get model field)
+                   change=(action (mut (get model field))) }}
+    On
+  {{else}}
+    Off
+  {{/toggle-switch}}
+</div>
