@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/toggle-switch';
+export { default } from 'cardstack-editor/components/toggle-switch';

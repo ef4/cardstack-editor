@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/modal-target';
+export { default } from 'cardstack-editor/components/modal-target';

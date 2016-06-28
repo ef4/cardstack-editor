@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/services/auth';
+export { default } from 'cardstack-editor/services/auth';

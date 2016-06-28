@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/editor-overlays';
+export { default } from 'cardstack-editor/components/editor-overlays';

@@ -16,7 +16,7 @@
         font-size: 12px;
         cursor: -webkit-grab;
         &:after {
-            content: url('/cardstack-cms/icons/item-grab.svg');
+            content: url('/cardstack-editor/icons/item-grab.svg');
             right: 2em;
             position: absolute;
         }
@@ -25,7 +25,7 @@
             border-color: darken($tools-active-color, 10%);
             color: $white;
             &:after {
-                content: url('/cardstack-cms/icons/item-grab-white.svg');
+                content: url('/cardstack-editor/icons/item-grab-white.svg');
             }
         }
         &:last-child {

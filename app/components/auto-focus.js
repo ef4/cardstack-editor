@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/auto-focus';
+export { default } from 'cardstack-editor/components/auto-focus';

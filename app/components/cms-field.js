@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/cms-field';
+export { default } from 'cardstack-editor/components/cms-field';

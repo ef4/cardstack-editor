@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/adapters/drupal-node';
+export { default } from 'cardstack-editor/adapters/drupal-node';

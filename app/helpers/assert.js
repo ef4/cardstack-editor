@@ -1,1 +1,1 @@
-export { default, assert } from 'cardstack-cms/helpers/assert';
+export { default, assert } from 'cardstack-editor/helpers/assert';

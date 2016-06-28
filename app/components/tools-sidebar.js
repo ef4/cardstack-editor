@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/tools-sidebar';
+export { default } from 'cardstack-editor/components/tools-sidebar';

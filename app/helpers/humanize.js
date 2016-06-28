@@ -1,1 +1,1 @@
-export { default, humanize } from 'cardstack-cms/helpers/humanize';
+export { default, humanize } from 'cardstack-editor/helpers/humanize';

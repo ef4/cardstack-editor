@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'cardstack-cms'
+  name: 'cardstack-editor'
 };

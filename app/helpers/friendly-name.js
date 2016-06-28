@@ -1,1 +1,1 @@
-export { default, friendlyName } from 'cardstack-cms/helpers/friendly-name';
+export { default, friendlyName } from 'cardstack-editor/helpers/friendly-name';

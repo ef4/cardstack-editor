@@ -3,7 +3,7 @@ const { attr, Model } = DS;
 import { pluralize } from 'ember-inflector';
 import inject from 'ember-service/inject';
 import computed from 'ember-computed';
-import RelationshipTracker from 'cardstack-cms/mixins/relationship-tracker';
+import RelationshipTracker from 'cardstack-editor/mixins/relationship-tracker';
 
 /*
   Base class for all the models that are stored as Drupal nodes

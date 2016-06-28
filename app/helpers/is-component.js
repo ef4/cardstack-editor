@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/helpers/is-component';
+export { default } from 'cardstack-editor/helpers/is-component';

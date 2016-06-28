@@ -1,5 +1,5 @@
 {
-  "name": "cardstack-cms",
+  "name": "cardstack-editor",
   "dependencies": {
     "ember": "~2.6.0-beta.2",
     "ember-cli-shims": "0.1.1",

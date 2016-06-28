@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/field-editors/mobiledoc-editor';
+export { default } from 'cardstack-editor/components/field-editors/mobiledoc-editor';

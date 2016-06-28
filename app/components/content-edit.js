@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/content-edit';
+export { default } from 'cardstack-editor/components/content-edit';

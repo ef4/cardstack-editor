@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/tools-compose';
+export { default } from 'cardstack-editor/components/tools-compose';

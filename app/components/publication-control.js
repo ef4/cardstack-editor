@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/publication-control';
+export { default } from 'cardstack-editor/components/publication-control';

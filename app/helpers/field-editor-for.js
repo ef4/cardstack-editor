@@ -1,1 +1,1 @@
-export { default, fieldEditorFor } from 'cardstack-cms/helpers/field-editor-for';
+export { default, fieldEditorFor } from 'cardstack-editor/helpers/field-editor-for';

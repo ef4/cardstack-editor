@@ -1,1 +1,1 @@
-export { default } from 'cardstack-cms/components/paragraph-options';
+export { default } from 'cardstack-editor/components/paragraph-options';
