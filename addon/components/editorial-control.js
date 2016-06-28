@@ -2,6 +2,7 @@ import layout from '../templates/components/editorial-control';
 import Component from 'ember-component';
 import get from 'ember-metal/get';
 import computed from 'ember-computed';
+import Ember from 'ember';
 
 export default Component.extend({
   layout,
@@ -9,7 +10,7 @@ export default Component.extend({
 
   editorialFieldNames: computed('model', function() {
     let model = this.get('model');
-    let fields = [];
+    let fields = Ember.A();
 
     get(model.constructor, 'attributes').forEach((meta, name) => {
       if (meta.options && meta.options.editorial) {
