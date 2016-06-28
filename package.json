@@ -1,6 +1,6 @@
 {
-  "name": "cardstack-cms",
-  "version": "0.0.1",
+  "name": "cardstack-editor",
+  "version": "0.0.2",
   "description": "Ember addon that implements the Cardstack CMS frontend user experience.",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "https://github.com/ef4/cardstack-cms",
+  "repository": "https://github.com/ef4/cardstack-editor",
   "engines": {
     "node": ">= 0.10.0"
   },
