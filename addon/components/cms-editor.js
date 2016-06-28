@@ -5,6 +5,7 @@ import layout from '../templates/components/cms-editor';
 export default Component.extend({
   layout,
   tools: inject(),
+  isPrimary: true,
   didRender() {
     if (this.get('isPrimary')) {
       this.get('tools').setPrimaryPage(this);

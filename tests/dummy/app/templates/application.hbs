@@ -1,14 +1,16 @@
 {{#cms-tools}}
-
   <div class="post">
-  {{#cms-editor model=model isPrimary=true as |cms|}}
-    {{#cms.field "title" as |title|}}
-      <h1>{{title}}</h1>
-    {{/cms.field}}
-    {{#cms.field "body" as |body|}}
-      {{cms-render-mobiledoc mobiledoc=body}}
-    {{/cms.field}}
-  {{/cms-editor}}
-  </div>
 
+    {{#cms-editor model=model as |cms|}}
+
+      {{#cms.field "title" as |title|}}
+        <h1>{{title}}</h1>
+      {{/cms.field}}
+
+      {{#cms.field "body" as |body|}}
+        {{cms-render-mobiledoc mobiledoc=body}}
+      {{/cms.field}}
+    {{/cms-editor}}
+
+  </div>
 {{/cms-tools}}
