@@ -57,7 +57,7 @@
     "ember-network": "0.3.0",
     "ember-sidebars": "0.2.1",
     "ember-truth-helpers": "1.2.0",
-    "ember-concurrency": "0.6.0",
+    "ember-concurrency": "0.7.8",
     "ember-modal-dialog": "0.8.3",
     "ember-power-select": "0.10.3",
     "liquid-fire": "0.23.1"
